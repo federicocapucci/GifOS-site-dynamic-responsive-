@@ -3,7 +3,7 @@ let tagcontainer = document.querySelector(".tagcontainer");
 let imgcontainer = document.querySelector(".imgcontainer");
 let searchtext = document.createElement('p');
 searchtext.classList.add('searchtext');
-searchlimit = "50";
+searchlimit = 50;
 
 let checkKey = (event) => {
     let termino = document.getElementById('search').value;
