@@ -86,6 +86,10 @@ body {
 
 /*  */
 
+.searchtext {
+    width: 100%;
+}
+
 .imgcontainer {
     justify-content: space-between;
     width: 100%;

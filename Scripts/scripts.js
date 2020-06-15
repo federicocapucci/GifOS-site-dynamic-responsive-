@@ -1,6 +1,8 @@
 const apiKey = "Q00yquB0V7z2kBILVpxWX2yjxFghtbu3";
 let container = document.querySelector(".imgcontainer");
-searchlimit = "150";
+let searchtext = document.createElement('p');
+searchtext.classList.add('searchtext');
+searchlimit = "50";
 
 let checkKey = (event) => {
     let termino = document.getElementById('search').value;
@@ -26,6 +28,11 @@ let getSearchResults = async(search) => {
     const found = await fetch('http://api.giphy.com/v1/gifs/search?q=' + search + '&api_key=' + apiKey + "&limit=" + searchlimit);
     const jsoned = await found.json();
     console.log(jsoned);
+
+    searchtext.innerHTML = "Results for '" + search + "'.";
+
+    container.appendChild(searchtext);
+
 
     if (jsoned.data.length == 0) {
         const errormsg = document.createElement("p");
