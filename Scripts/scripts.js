@@ -29,16 +29,13 @@ let getSearchResults = async(search) => {
     const jsoned = await found.json();
     console.log(jsoned);
 
-    searchtext.innerHTML = "Results for '" + search + "'.";
+    searchtext.innerHTML = "Resultados para '" + search + "'.";
 
     container.appendChild(searchtext);
 
 
     if (jsoned.data.length == 0) {
-        const errormsg = document.createElement("p");
-        errormsg.innerHTML = "No se encontraron resultados con el termino '" + search + "'.";
-        container.appendChild(errormsg);
-
+        searchtext.innerHTML = "No se encontraron resultados con el termino '" + search + "'.";
 
     } else {
 
