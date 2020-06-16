@@ -4,6 +4,17 @@
     font-family: 'Chakra Petch', sans-serif;
     font-size: 20px;
     box-sizing: border-box;
+    border: 1px dotted transparent;
+}
+
+img,
+button {
+    border: 1px dotted transparent;
+}
+
+img:hover,
+button:hover {
+    border: 1px dotted white;
 }
 
 body {
@@ -80,6 +91,7 @@ body {
 }
 
 .searchcontainer input {
+    outline: none;
     margin: 3px 5px;
     width: 100%;
     min-width: 300px;
@@ -165,7 +177,7 @@ body {
 }
 
 .bigsize {
-    width: 700px;
+    width: 702px;
     min-width: 240px;
     height: 345px;
     box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #fff;
@@ -187,4 +199,10 @@ body {
     width: auto;
     height: 20px;
     background-color: blue;
+}
+
+@media (max-width:600px) {
+    .bigsize {
+        width: 345px;
+    }
 }

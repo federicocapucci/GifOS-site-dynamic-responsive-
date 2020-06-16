@@ -8,10 +8,9 @@ searchlimit = 50;
 let checkKey = (event) => {
     let termino = document.getElementById('search').value;
     if (event.code === 'Enter') {
-        getSearchResults(termino);
+        empezarBusqueda();
     }
     return false;
-
 }
 
 let empezarBusqueda = () => {
@@ -43,11 +42,17 @@ let getSearchResults = async(search) => {
 
     } else {
 
-        let tagnum = 15
+        let tagnum;
+        if (jsoned.data.length > 20) {
+            tagnum = 15
+        } else {
+            tagnum = jsoned.data.length
+        }
 
         for (let j = 0; j < tagnum; j++) {
 
             const tagbtn = document.createElement("button");
+            tagbtn.id = "tagbtn";
 
             let tagcontent = tagbtn.innerHTML = jsoned.data[j].title;
 
