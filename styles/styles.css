@@ -143,10 +143,12 @@ body {
 }
 
 .tagcontainer button {
+    box-shadow: 1px 1px black, -1px -1px white;
+    outline: 1px gray;
     padding: 5px;
     margin: 2px;
     font-size: 12px;
-    background-color: blue;
+    background-color: #4180f6;
     color: white;
     cursor: pointer;
     margin-bottom: 5px;
