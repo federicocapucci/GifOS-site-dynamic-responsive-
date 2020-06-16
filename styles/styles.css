@@ -175,15 +175,15 @@ body {
     height: 345px;
     box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #fff;
     animation: test 5s ease-in-out infinite;
-    background: linear-gradient(#110038, #fff4fd);
+    background: linear-gradient(#F7C9F3, #4180F6);
 }
 
 .bigsize {
-    width: 702px;
+    width: 701px;
     min-width: 240px;
     height: 345px;
     box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #fff;
-    background: linear-gradient(#110038, #fff4fd);
+    background: linear-gradient(#F7C9F3, #4180F6);
 }
 
 .pic {
