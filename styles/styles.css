@@ -1,3 +1,42 @@
+.btn_global {
+    outline: none;
+    width: 144px;
+    height: 36px;
+    margin: 5px;
+    background: #F7C9F3;
+    border: 1px solid #110038;
+    -webkit-box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+}
+
+.btn_arrow {
+    outline: none;
+    width: 36px;
+    height: 36px;
+    margin: 5px -5px;
+    background: #F7C9F3;
+    border: 1px solid #110038;
+    -webkit-box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+}
+
+.btn_global span {
+    outline: none;
+    font-size: 16px;
+    color: #110038;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 18px;
+}
+
+.btn_global:hover {
+    background: #E6BBE2;
+}
+
+.btn_global:hover~.btn_arrow {
+    background: #E6BBE2;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -5,15 +44,15 @@
     font-size: 20px;
     box-sizing: border-box;
     border: 1px dotted transparent;
+    transition: all 1s ease-in linear;
 }
 
 .hide {
     display: none;
 }
 
-img:hover,
 button:hover {
-    border: 1px dotted white;
+    border: 1px dotted #ffffff;
 }
 
 body {
@@ -30,10 +69,21 @@ body {
     margin: auto;
 }
 
+.navcontainer {
+    width: 100%;
+    min-width: 480px;
+    max-width: 1500px;
+    height: auto;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .heading {
     padding: 0;
-    margin-top: 1px;
-    font-size: 11px;
+    margin-top: 0px;
+    font-size: 12px;
     width: 100%;
     height: 23px;
     background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
@@ -42,7 +92,7 @@ body {
     padding: 2px;
     color: #FFFFFF;
     letter-spacing: 0;
-    text-indent: 20px;
+    text-indent: 8vw;
 }
 
 .searchtop {
@@ -98,27 +148,36 @@ body {
     box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
 }
 
-.Sbutton {
-    width: 120px;
-    height: 50px;
-    cursor: pointer;
-    background-color: salmon;
+.search-button {
     display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+    justify-content: space-around;
+    padding-right: 3px;
+    width: 112px;
+    height: 36px;
+    font-size: 16px;
+    background: #E6E6E6;
+    border: 1px solid #808080;
+    box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+    line-height: 35px;
+    text-indent: 3px;
 }
 
-.Sbutton:hover {
+.search-button img {
+    color: gray;
+}
+
+.search-button:hover {
     background-color: red;
 }
 
-.Sbutton:hover::after {
+
+/* .search-button:hover::after {
     content: "";
     position: absolute;
     width: 105px;
     height: 46px;
     border: 1px dotted white;
-}
+} */
 
 
 /*  */
@@ -159,6 +218,11 @@ body {
     border: 1px solid #4c2f99;
 }
 
+.tagcontainer button:hover {
+    background-color: #3070d5;
+    border: 1px dotted white;
+}
+
 .randomcontainer {
     width: 100%;
     height: auto;
@@ -172,6 +236,7 @@ body {
 
 .randomSubContainer {
     position: relative;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: stretch;
@@ -180,20 +245,36 @@ body {
     box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
 }
 
-.randSpam {
-    width: 100%;
+.randomsize {
+    position: relative;
+    width: 350px;
+    margin: auto;
+    height: 350px;
+    box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #fff;
+    background: linear-gradient(#F7C9F3, #4180F6);
+    overflow: hidden;
+}
+
+.randSpan {
+    margin: 1px auto;
+    width: 99%;
+    height: 30px;
+    line-height: 25px;
     position: relative;
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
     box-sizing: border-box;
-    padding-right: 2px;
     text-indent: 5px;
     font-weight: bold;
 }
 
-.randSpam img {
+.randSpan img {
     cursor: pointer;
+    width: 18px;
+    height: 18px;
+    margin-right: 3px;
+    margin-top: 3px;
 }
 
 .randomSubContainer * {
@@ -225,6 +306,26 @@ body {
     box-shadow: inset -2px -2px 0 0 #284F99, inset 2px 2px 0 0 #FFFFFF;
 }
 
+.tags {
+    position: absolute;
+    top: 91%;
+    left: 1px;
+    font-size: 14px;
+    font-weight: bold;
+    text-indent: 5px;
+    line-height: 30px;
+    width: 101%;
+    margin: auto;
+    height: 30px;
+    color: white;
+    opacity: 0;
+    background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
+}
+
+a:hover+a {
+    opacity: 1;
+}
+
 .imgcontainer {
     width: 100%;
     height: auto;
@@ -237,23 +338,31 @@ body {
 }
 
 .imgcontainer a {
-    margin-bottom: 25px;
+    margin-bottom: 24px;
 }
 
 .normalsize {
+    position: relative;
     width: 350px;
+    margin: auto;
     min-width: 240px;
     height: 350px;
     box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #fff;
     background: linear-gradient(#F7C9F3, #4180F6);
+    overflow: hidden;
+    margin-bottom: 24px;
 }
 
 .bigsize {
-    width: 720px;
+    position: relative;
+    width: 724px;
+    margin: auto;
     min-width: 240px;
     height: 350px;
     box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #fff;
     background: linear-gradient(#F7C9F3, #4180F6);
+    overflow: hidden;
+    margin-bottom: 24px;
 }
 
 .pic {
@@ -261,7 +370,12 @@ body {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: 99.5%;
+    width: 100%;
+    height: 100%;
+}
+
+.pic:hover {
+    width: 99%;
     height: 99%;
 }
 
@@ -273,8 +387,8 @@ body {
     background-color: blue;
 }
 
-@media (max-width:600px) {
+@media (max-width:900px) {
     .bigsize {
-        width: 345px;
+        width: 350px;
     }
 }

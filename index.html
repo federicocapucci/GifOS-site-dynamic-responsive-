@@ -7,7 +7,7 @@
     <title>GifOS V1</title>
     <link rel="shortcut icon" type="image/jpg" href="assets/gifOF_logo.png" />
 
-    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/styles.css">
 </head>
 
@@ -17,11 +17,28 @@
     <div class="heading">¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de visitas: 31.087.007 </div>
 
     <div class="fullPageContainer">
+        <div class="navcontainer">
 
-        <div class="logo">
-            <a href="./index.html"><img src="./assets/gifOF_logo.png" alt="gifos logo"></a>
+            <div class="logo">
+                <a href="./index.html"><img src="./assets/gifOF_logo.png" alt="gifos logo"></a>
+            </div>
+            <div class="btncontainer" style="display: flex;">
+                <button class="btn_global" id="crearGifos">
+                  <span class="btn__text-container">Crear Guifos</span>
+                 </button>
+
+                <div style="display: flex; flex-wrap: nowrap; justify-content: flex-start;">
+                    <button class="btn_global" id="crearGifos">
+                    <span class="btn__text-container">Elegir Tema</span>
+                   </button>
+
+                    <button class="btn_arrow" id="crearGifos">
+                    <img src="./assets/dropdown.svg" alt="dropdown">
+                   </button>
+                </div>
+
+            </div>
         </div>
-
 
 
         <div class="searchcontainer">
@@ -29,7 +46,7 @@
             </div>
             <div>
                 <input type="text" autocomplete="off" placeholder="Busca lo que quieras!" id="search" onfocus="this.value=''" onkeypress="checkKey(event)">
-                <div class="Sbutton" onclick="empezarBusqueda()"> <img src="assets/lupa.svg" alt="buscar"> buscar</div>
+                <div class="search-button" onclick="empezarBusqueda()"> <img src="assets/lupa.svg" alt="buscar"> Buscar</div>
             </div>
 
         </div>
