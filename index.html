@@ -11,18 +11,21 @@
     <link rel="stylesheet" href="./styles/styles.css">
 </head>
 
-<body>
+<body onload="getRandom(),getTrending()">
 
-    <div class="nav">
-        <p>¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de visitas: 31.087.007 </p>
-    </div>
+
+    <div class="heading">¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de visitas: 31.087.007 </div>
+
     <div class="fullPageContainer">
 
         <div class="logo">
-            <a href="#"><img src="assets/gifOF_logo.png" alt="gifos logo"></a>
+            <a href="./index.html"><img src="./assets/gifOF_logo.png" alt="gifos logo"></a>
         </div>
+
+
+
         <div class="searchcontainer">
-            <div class="navtop">buscar
+            <div class="searchtop">Buscar
             </div>
             <div>
                 <input type="text" autocomplete="off" placeholder="Busca lo que quieras!" id="search" onfocus="this.value=''" onkeypress="checkKey(event)">
@@ -30,11 +33,14 @@
             </div>
 
         </div>
-        <div class="tagcontainer">
-
-
+        <div class="separators">
+            <P class="separator">Hoy the sugerimos:</P>
+            <div class="randomcontainer">
+            </div>
+            <P class="separator">Tendencias:</P>
         </div>
-
+        <div class="tagcontainer">
+        </div>
         <div class="imgcontainer">
 
 
