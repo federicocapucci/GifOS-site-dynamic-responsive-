@@ -8,7 +8,8 @@
 }
 
 .search-suggestions a {
-    background: #F0F0F0;
+    width: 91.5%;
+    background: #B4B4B4;
     border: 1px solid #808080;
     box-shadow: inset -1px -1px 0 0 #8F8F8F, inset 1px 1px 0 0 #FFFFFF;
     padding: 5px;
@@ -17,7 +18,7 @@
 }
 
 .search-suggestions a:hover {
-    background: #B4B4B4;
+    background: #A4A4A4;
     box-shadow: inset -2px -2px 0 0 #8F8F8F, inset 2px 2px 0 0 #FFFFFF;
     cursor: pointer;
     border: 1px solid #110038;
@@ -71,8 +72,9 @@
 }
 
 .themeContainer a:hover {
-    background: #FFF4FD;
-    border: 1px solid #CCA6C9;
+    background: blue;
+    color: white;
+    border: 1px solid white;
     box-shadow: inset -1px -1px 0 0 #E6DCE4, inset 1px 1px 0 0 #FFFFFF;
 }
 
@@ -86,11 +88,11 @@
     margin-left: 15px;
     padding: 4px;
     text-decoration: none;
-    color: black;
+    color: white;
 }
 
 .misgifos:hover {
-    border: 1px dotted black;
+    border: 1px dotted white;
 }
 
 .misgifos span {
@@ -103,6 +105,7 @@
 
 .btn_global {
     cursor: pointer;
+    color: white;
     outline: none;
     width: 144px;
     height: 36px;
@@ -123,23 +126,30 @@
     border: 1px solid #110038;
     -webkit-box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
     box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+    color: white;
+}
+
+.btn_arrow img {
+    color: white;
 }
 
 .btn_global span {
     outline: none;
     font-size: 16px;
-    color: #110038;
+    color: white;
     letter-spacing: 0;
     text-align: center;
     line-height: 18px;
 }
 
 .btn_global:hover {
-    background: #E6BBE2;
+    background: #dd2ddc;
+    border: 1px dotted white;
 }
 
-.btn_global:hover~.btn_arrow {
-    background: #E6BBE2;
+.btn_arrow:hover {
+    background: #dd2ddc;
+    border: 1px dotted white;
 }
 
 * {
@@ -178,6 +188,7 @@ body {
     margin: auto;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     align-items: center;
 }
 
@@ -209,6 +220,7 @@ body {
 
 .logo {
     margin-top: 35px;
+    margin-right: 150px;
     width: 80px;
     height: 80px;
 }
@@ -292,16 +304,16 @@ body {
 /*  */
 
 .separator {
-    background: #FFFAFE;
     width: 100%;
-    border: 1px solid #E6BBE2;
-    box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #80687D;
     height: 32px;
     margin: 20px 0 0 0;
     font-size: 14px;
     color: #110038;
     line-height: 30px;
     text-indent: 10px;
+    background: #FFFAFE;
+    border: 1px solid #2E32FB;
+    box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #110038;
 }
 
 .tagcontainer {
@@ -320,11 +332,11 @@ body {
     padding: 8px 5px;
     margin: 3px;
     font-size: 14px;
-    background-color: #4180f6;
+    background-color: #2e32fb;
     color: white;
     cursor: pointer;
     margin-bottom: 5px;
-    border: 1px solid #4c2f99;
+    border: 1px solid #1e21fb;
 }
 
 .tagcontainer button:hover {

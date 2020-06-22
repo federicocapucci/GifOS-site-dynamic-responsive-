@@ -140,22 +140,19 @@ let checkKey = async(event) => {
         if (input.value.length > 2) {
             searchSuggestions.classList.remove('hide')
 
-            const found = await fetch('http://api.giphy.com/v1/tags/related/' + input.value + '?api_key=' + apiKey);
-            const jsoned = await found.json();
+            const suggested = await fetch('http://api.giphy.com/v1/tags/related/' + input.value + '?api_key=' + apiKey);
+            const suggestedjsoned = await suggested.json();
             // console.log(jsoned)
 
-            suggestion.innerHTML = jsoned.data[0].name;
-            suggestion2.innerHTML = jsoned.data[1].name;;
-            suggestion3.innerHTML = jsoned.data[2].name;;
+            suggestion.innerHTML = suggestedjsoned.data[0].name;
+            suggestion2.innerHTML = suggestedjsoned.data[1].name;;
+            suggestion3.innerHTML = suggestedjsoned.data[2].name;;
 
             // console.log(suggestion.innerHTML);
             searchSuggestions.appendChild(suggestion);
             searchSuggestions.appendChild(suggestion2);
             searchSuggestions.appendChild(suggestion3);
         }
-
-
-
     }
 }
 
