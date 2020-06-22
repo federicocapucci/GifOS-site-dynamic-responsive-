@@ -6,7 +6,6 @@ searchtext.classList.add('separator');
 searchlimit = 50;
 
 
-
 let getRandom = async() => {
 
     let randomContainer = document.getElementsByClassName('randomcontainer')[0];
@@ -283,7 +282,6 @@ const changeThemeNight = () => {
 const showThemes = () => {
 
     let themeContainer = document.getElementsByClassName('themeContainer')[0];
-
     themeContainer.classList.toggle('hide');
 
 }
