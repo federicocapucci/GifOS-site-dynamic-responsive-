@@ -1,20 +1,125 @@
+.search-suggestions {
+    display: flex;
+    flex-direction: column;
+    margin-top: -32px;
+    padding: 5px;
+    background: #B4B4B4;
+    box-shadow: inset -2px -2px 0 0 #8F8F8F, inset 2px 2px 0 0 #FFFFFF;
+}
+
+.search-suggestions a {
+    background: #F0F0F0;
+    border: 1px solid #808080;
+    box-shadow: inset -1px -1px 0 0 #8F8F8F, inset 1px 1px 0 0 #FFFFFF;
+    padding: 5px;
+    margin: 5px;
+    font-size: 14px;
+}
+
+.search-suggestions a:hover {
+    background: #B4B4B4;
+    box-shadow: inset -2px -2px 0 0 #8F8F8F, inset 2px 2px 0 0 #FFFFFF;
+    cursor: pointer;
+    border: 1px solid #110038;
+}
+
+#search {
+    height: 48px;
+    font-size: 16px;
+    color: #8F8F8F;
+    letter-spacing: 0;
+    line-height: 22px;
+}
+
+#search:focus {
+    color: black;
+}
+
+.btncontainer {
+    position: relative;
+}
+
+.themeContainer {
+    position: absolute;
+    left: 160px;
+    top: 42px;
+    width: 180px;
+    height: 102px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background: #B4B4B4;
+    box-shadow: inset -2px -2px 0 0 #8F8F8F, inset 2px 2px 0 0 #FFFFFF;
+}
+
+.themeContainer a {
+    line-height: 35px;
+    text-indent: 10px;
+    width: 150px;
+    height: 36px;
+    background: #F0F0F0;
+    border: 1px solid #808080;
+    box-shadow: inset -1px -1px 0 0 #8F8F8F, inset 1px 1px 0 0 #FFFFFF;
+    font-size: 15px;
+    text-decoration: none;
+    color: black;
+}
+
+.themeContainer a span {
+    font-size: 15px;
+}
+
+.themeContainer a:hover {
+    background: #FFF4FD;
+    border: 1px solid #CCA6C9;
+    box-shadow: inset -1px -1px 0 0 #E6DCE4, inset 1px 1px 0 0 #FFFFFF;
+}
+
+.themeContainer a:hover span {
+    text-decoration: underline;
+}
+
+.misgifos {
+    font-size: 16px;
+    line-height: 32px;
+    margin-left: 15px;
+    padding: 4px;
+    text-decoration: none;
+    color: black;
+}
+
+.misgifos:hover {
+    border: 1px dotted black;
+}
+
+.misgifos span {
+    font-size: 16px;
+    text-decoration: underline;
+}
+
+
+/*  */
+
 .btn_global {
+    cursor: pointer;
     outline: none;
     width: 144px;
     height: 36px;
     margin: 5px;
-    background: #F7C9F3;
+    background: #EE3EFE;
     border: 1px solid #110038;
     -webkit-box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
     box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
 }
 
 .btn_arrow {
+    cursor: pointer;
     outline: none;
     width: 36px;
     height: 36px;
     margin: 5px -5px;
-    background: #F7C9F3;
+    background: #EE3EFE;
     border: 1px solid #110038;
     -webkit-box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
     box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
@@ -51,14 +156,10 @@
     display: none;
 }
 
-button:hover {
-    border: 1px dotted #ffffff;
-}
-
 body {
     display: flex;
     flex-direction: column;
-    background-color: #fff4fd;
+    background-color: #110038;
 }
 
 .fullPageContainer {
@@ -86,7 +187,7 @@ body {
     font-size: 12px;
     width: 100%;
     height: 23px;
-    background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
+    background-image: linear-gradient(270deg, #EE3EFE 0%, #2E32FB 100%);
     box-shadow: 0 1px 0 0 #110038;
     overflow: hidden;
     padding: 2px;
@@ -100,9 +201,10 @@ body {
     margin: 0;
     width: 100%;
     height: 35px;
-    background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
+    background-image: linear-gradient(270deg, #EE3EFE 0%, #2E32FB 100%);
     color: white;
     line-height: 15px;
+    border: none;
 }
 
 .logo {
@@ -121,8 +223,8 @@ body {
     margin: auto;
     background-color: plum;
     margin-bottom: 30px;
-    background: #E6E6E6;
-    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+    background: #B4B4B4;
+    box-shadow: inset -2px -2px 0 0 #8F8F8F, inset 2px 2px 0 0 #FFFFFF;
 }
 
 .searchcontainer>div {
@@ -145,29 +247,36 @@ body {
     text-indent: 10px;
     background: #FFFFFF;
     border: 1px solid #979797;
-    box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #000000;
 }
 
 .search-button {
+    outline: none;
+    margin-top: 8px;
     display: flex;
     justify-content: space-around;
     padding-right: 3px;
     width: 112px;
     height: 36px;
     font-size: 16px;
-    background: #E6E6E6;
+    background: #c1c1c1;
     border: 1px solid #808080;
-    box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+    box-shadow: inset -1px -1px 0 0 #8F8F8F, inset 1px 1px 0 0 #FFFFFF;
     line-height: 35px;
-    text-indent: 3px;
+    border: 1px dotted transparent;
 }
 
-.search-button img {
-    color: gray;
+.search-button-on {
+    background: #EE3EFE;
 }
 
 .search-button:hover {
-    background-color: red;
+    border: 1px dotted black;
+}
+
+.search-button img {
+    margin-top: 8px;
+    margin-left: 3px;
 }
 
 
@@ -241,8 +350,8 @@ body {
     flex-direction: column;
     justify-content: stretch;
     align-items: stretch;
-    background: #E6E6E6;
-    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+    background: #B4B4B4;
+    box-shadow: inset -2px -2px 0 0 #8F8F8F, inset 2px 2px 0 0 #FFFFFF;
 }
 
 .randomsize {
@@ -251,7 +360,7 @@ body {
     margin: auto;
     height: 350px;
     box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #fff;
-    background: linear-gradient(#F7C9F3, #4180F6);
+    background: linear-gradient(#EE3EFE, #2E32FB);
     overflow: hidden;
 }
 
@@ -319,7 +428,7 @@ body {
     height: 30px;
     color: white;
     opacity: 0;
-    background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
+    background-image: linear-gradient(270deg, #EE3EFE 0%, #2E32FB 100%);
 }
 
 a:hover+a {
@@ -348,7 +457,7 @@ a:hover+a {
     min-width: 240px;
     height: 350px;
     box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #fff;
-    background: linear-gradient(#F7C9F3, #4180F6);
+    background: linear-gradient(#EE3EFE, #2E32FB);
     overflow: hidden;
     margin-bottom: 24px;
 }
@@ -360,7 +469,7 @@ a:hover+a {
     min-width: 240px;
     height: 350px;
     box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #fff;
-    background: linear-gradient(#F7C9F3, #4180F6);
+    background: linear-gradient(#EE3EFE, #2E32FB);
     overflow: hidden;
     margin-bottom: 24px;
 }

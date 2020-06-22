@@ -6,6 +6,7 @@ searchtext.classList.add('separator');
 searchlimit = 50;
 
 
+
 let getRandom = async() => {
 
     let randomContainer = document.getElementsByClassName('randomcontainer')[0];
@@ -37,7 +38,7 @@ let getRandom = async() => {
     for (let i = 0; i < randomImgArray.length; i++) {
         const randomitems = await fetch('https://api.giphy.com/v1/gifs/random?api_key=' + apiKey);
         const randomitemsjson = await randomitems.json();
-        console.log(randomitemsjson);
+        // console.log(randomitemsjson);
         const x = document.createElement('img')
         x.src = './assets/close.svg', x.alt = 'close btn';
         x.onclick = (() => { x.classList.add('hide') });
@@ -58,7 +59,7 @@ let getRandom = async() => {
 let getTrending = async() => {
     const trending = await fetch('https://api.giphy.com/v1/gifs/trending?api_key=' + apiKey + '&limit=' + searchlimit);
     const trendingjson = await trending.json();
-    console.log(trendingjson);
+    // console.log(trendingjson);
     for (let i = 0; i < trendingjson.data.length; i++) {
         const newdiv = document.createElement('div');
         const newimg = document.createElement('img');
@@ -91,11 +92,71 @@ let getTrending = async() => {
 }
 
 
-let checkKey = (event) => {
-    if (event.code === 'Enter') {
+
+
+let checkKey = async(event) => {
+    let input = document.getElementById('search');
+    let button = document.getElementById('search-button');
+    let icon = document.getElementById('s-icon');
+    let searchSuggestions = document.getElementsByClassName('search-suggestions')[0];
+
+    if (input.value === "") {
+        button.disabled = true;
+        button.classList.remove('search-button-on')
+        icon.src = "./assets/lupa_inactive.svg"
+        searchSuggestions.classList.add('hide')
+    } else if (event.code === 'Enter') {
         empezarBusqueda();
+
+
+    } else {
+        button.disabled = false;
+        icon.src = "./assets/lupa.svg"
+        button.classList.add('search-button-on');
+        searchSuggestions.innerHTML = '';
+        let suggestion = document.createElement('a');
+        let suggestion2 = document.createElement('a');
+        let suggestion3 = document.createElement('a');
+
+        suggestion.onclick = (() => {
+
+            document.getElementById('search').value = suggestion.innerHTML;
+            empezarBusqueda();
+
+        })
+        suggestion2.onclick = (() => {
+
+            document.getElementById('search').value = suggestion2.innerHTML;
+            empezarBusqueda();
+
+        })
+        suggestion3.onclick = (() => {
+
+            document.getElementById('search').value = suggestion3.innerHTML;
+            empezarBusqueda();
+
+        })
+
+        if (input.value.length > 2) {
+            searchSuggestions.classList.remove('hide')
+
+            const found = await fetch('http://api.giphy.com/v1/tags/related/' + input.value + '?api_key=' + apiKey);
+            const jsoned = await found.json();
+            // console.log(jsoned)
+
+            suggestion.innerHTML = jsoned.data[0].name;
+            suggestion2.innerHTML = jsoned.data[1].name;;
+            suggestion3.innerHTML = jsoned.data[2].name;;
+
+            // console.log(suggestion.innerHTML);
+            searchSuggestions.appendChild(suggestion);
+            searchSuggestions.appendChild(suggestion2);
+            searchSuggestions.appendChild(suggestion3);
+        }
+
+
+
     }
-    return false;
 }
 
 let empezarBusqueda = () => {
@@ -103,11 +164,16 @@ let empezarBusqueda = () => {
     imgcontainer.innerHTML = '';
     tagcontainer.innerHTML = '';
     let termino = document.getElementById('search').value;
+    document.getElementById('search').value = "";
+    checkKey(event);
+
+
+
     if (termino == '') {
         document.getElementsByClassName('separators')[0].classList.remove('hide');
         getTrending();
     } else {
-        console.log('prueba:' + termino);
+        // console.log('prueba:' + termino);
         getSearchResults(termino);
     }
 }
@@ -117,7 +183,7 @@ let empezarBusqueda = () => {
 let getSearchResults = async(search) => {
     const found = await fetch('http://api.giphy.com/v1/gifs/search?q=' + search + '&api_key=' + apiKey + '&limit=' + searchlimit);
     const jsoned = await found.json();
-    console.log(jsoned);
+    // console.log(jsoned);
     searchtext.innerHTML = 'Resultados para "' + search + '".';
 
 
@@ -144,7 +210,7 @@ let getSearchResults = async(search) => {
 
             if (tagcontent != '' && tagcontent.length > 3) {
 
-                console.log(tagbtn.innerHTML = tagcontent);
+                // console.log(tagbtn.innerHTML = tagcontent);
 
                 tagcontainer.appendChild(tagbtn);
 
@@ -153,7 +219,7 @@ let getSearchResults = async(search) => {
             }
 
             tagbtn.onclick = (() => {
-                let newSearch = document.getElementById('search').value = tagbtn.innerHTML;
+                document.getElementById('search').value = tagbtn.innerHTML;
                 empezarBusqueda();
             })
 
@@ -190,4 +256,37 @@ let getSearchResults = async(search) => {
         }
         tagcontainer.appendChild(searchtext);
     }
+}
+
+
+const changeThemeDay = () => {
+
+    let styler = document.getElementById('styler');
+    styler.href = "./styles/SailorDay.css";
+    let logo = document.getElementById('toplogo');
+    logo.src = "./assets/gifOF_logo.png"
+    let favicon = document.getElementById('favicon');
+    favicon.href = "./assets/gifOF_logo.png"
+    showThemes();
+
+
+}
+
+const changeThemeNight = () => {
+
+    let styler = document.getElementById('styler');
+    styler.href = "./styles/SailorNight.css";
+    let logo = document.getElementById('toplogo');
+    logo.src = "./assets/gifOF_logo_dark.png"
+    let favicon = document.getElementById('favicon');
+    favicon.href = "./assets/gifOF_logo_dark.png"
+    showThemes();
+}
+
+const showThemes = () => {
+
+    let themeContainer = document.getElementsByClassName('themeContainer')[0];
+
+    themeContainer.classList.toggle('hide');
+
 }
