@@ -276,6 +276,7 @@ body {
     box-shadow: inset -1px -1px 0 0 #8F8F8F, inset 1px 1px 0 0 #FFFFFF;
     line-height: 35px;
     border: 1px dotted transparent;
+    cursor: pointer;
 }
 
 .search-button-on {
@@ -291,17 +292,14 @@ body {
     margin-left: 3px;
 }
 
+.search-button:disabled {
+    background: #c1c1c1;
+    cursor: default;
+}
 
-/* .search-button:hover::after {
-    content: "";
-    position: absolute;
-    width: 105px;
-    height: 46px;
-    border: 1px dotted white;
-} */
-
-
-/*  */
+.search-button:disabled:hover {
+    border: 1px dotted transparent;
+}
 
 .separator {
     width: 100%;
@@ -357,13 +355,15 @@ body {
 
 .randomSubContainer {
     position: relative;
-    height: auto;
+    width: 352px;
+    height: 352px;
     display: flex;
     flex-direction: column;
     justify-content: stretch;
     align-items: stretch;
     background: #B4B4B4;
     box-shadow: inset -2px -2px 0 0 #8F8F8F, inset 2px 2px 0 0 #FFFFFF;
+    margin: 0 10px 15px 10px;
 }
 
 .randomsize {

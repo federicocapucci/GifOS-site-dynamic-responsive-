@@ -8,7 +8,12 @@ searchlimit = 50;
 
 let getRandom = async() => {
 
+    randomDivArray = document.getElementsByClassName('randomSubContainer');
+    randomSpanArray = document.getElementsByClassName('randSpan');
+    randomImgArray = document.getElementsByClassName('randImg');
+    randomBtnArray = document.getElementsByClassName('button');
     let randomContainer = document.getElementsByClassName('randomcontainer')[0];
+
     for (let i = 0; i < 4; i++) {
         const newdiv = document.createElement('div');
         const newspan = document.createElement('span');
@@ -27,11 +32,6 @@ let getRandom = async() => {
 
     }
 
-
-    randomDivArray = document.getElementsByClassName('randomSubContainer');
-    randomSpanArray = document.getElementsByClassName('randSpan');
-    randomImgArray = document.getElementsByClassName('randImg');
-    randomBtnArray = document.getElementsByClassName('button');
 
 
     for (let i = 0; i < randomImgArray.length; i++) {
@@ -90,9 +90,6 @@ let getTrending = async() => {
     }
 }
 
-
-
-
 let checkKey = async(event) => {
     let input = document.getElementById('search');
     let button = document.getElementById('search-button');
@@ -135,21 +132,19 @@ let checkKey = async(event) => {
             empezarBusqueda();
 
         })
-
         if (input.value.length > 2) {
             searchSuggestions.classList.remove('hide')
 
             const suggested = await fetch('http://api.giphy.com/v1/tags/related/' + input.value + '?api_key=' + apiKey);
             const suggestedjsoned = await suggested.json();
             // console.log(jsoned)
-
+            searchSuggestions.innerHTML = "";
+            console.log(searchSuggestions.innerHTML);
             suggestion.innerHTML = suggestedjsoned.data[0].name;
-            suggestion2.innerHTML = suggestedjsoned.data[1].name;;
-            suggestion3.innerHTML = suggestedjsoned.data[2].name;;
-
-            // console.log(suggestion.innerHTML);
             searchSuggestions.appendChild(suggestion);
+            suggestion2.innerHTML = suggestedjsoned.data[1].name;
             searchSuggestions.appendChild(suggestion2);
+            suggestion3.innerHTML = suggestedjsoned.data[2].name;
             searchSuggestions.appendChild(suggestion3);
         }
     }
@@ -162,8 +157,6 @@ let empezarBusqueda = () => {
     let termino = document.getElementById('search').value;
     document.getElementById('search').value = "";
     checkKey(event);
-
-
 
     if (termino == '') {
         document.getElementsByClassName('separators')[0].classList.remove('hide');
@@ -283,5 +276,18 @@ const showThemes = () => {
 
     let themeContainer = document.getElementsByClassName('themeContainer')[0];
     themeContainer.classList.toggle('hide');
+
+}
+
+
+let migifsection = () => {
+
+    let gifosContainer = document.getElementById('gifosContainer');
+    let mainContainer = document.getElementById('mainContainer');
+    let gifoslogo = document.getElementById('gifoslogo');
+    let toplogo = document.getElementById('toplogo');
+    gifoslogo.src = toplogo.src;
+    gifosContainer.classList.toggle('hide');
+    mainContainer.classList.toggle('hide');
 
 }
