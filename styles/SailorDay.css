@@ -6,6 +6,7 @@
     box-sizing: border-box;
     border: 1px dotted transparent;
     transition: all 1s ease-in linear;
+    text-decoration: none;
 }
 
 .search-suggestions {
@@ -48,6 +49,8 @@
 
 .btncontainer {
     position: relative;
+    display: flex;
+    align-items: baseline;
 }
 
 .themeContainer {
@@ -218,6 +221,21 @@ body {
     border: none;
 }
 
+.searchtopgifos {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 35px;
+    background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
+    color: white;
+    line-height: 15px;
+    border: none;
+    font-size: 14;
+    font-weight: bold;
+    line-height: 35px;
+    text-indent: 5px;
+}
+
 .logo {
     margin-top: 35px;
     width: 80px;
@@ -373,8 +391,10 @@ body {
     margin: auto;
     height: 350px;
     box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #fff;
-    background: linear-gradient(#F7C9F3, #4180F6);
+    animation: changecolors 1s linear infinite alternate both;
     overflow: hidden;
+    outline: 2px solid #B4B4B4;
+    outline-offset: -2px;
 }
 
 .randomsize:hover {
@@ -476,9 +496,10 @@ a:hover+a {
     min-width: 240px;
     height: 350px;
     box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #fff;
-    background: linear-gradient(#F7C9F3, #4180F6);
+    /* background: linear-gradient(#F7C9F3, #4180F6); */
     overflow: hidden;
     margin-bottom: 24px;
+    animation: changecolors 1s linear 2 alternate both;
 }
 
 .bigsize {
@@ -488,9 +509,19 @@ a:hover+a {
     min-width: 240px;
     height: 350px;
     box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #fff;
-    background: linear-gradient(#F7C9F3, #4180F6);
+    /* background: linear-gradient(#F7C9F3, #4180F6); */
     overflow: hidden;
     margin-bottom: 24px;
+    animation: changecolors 1s linear 2 alternate both;
+}
+
+@keyframes changecolors {
+    0% {
+        background-color: #F7C9F3;
+    }
+    100% {
+        background-color: #4180F6;
+    }
 }
 
 .pic {
@@ -517,22 +548,89 @@ a:hover+a {
     background-color: blue;
 }
 
-
-/**/
-
 .gifosInstructions {
+    position: relative;
     margin: 100px auto;
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
     width: 684px;
-    height: 386px;
+    height: auto;
     background: #E6E6E6;
     box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
 }
 
+video {
+    background: #FFFFFF;
+    border: 1px solid #979797;
+    box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+    position: relative;
+    width: 90%;
+    margin: auto;
+    margin-top: 15px;
+}
+
 .gifosInstructions * {
     font-size: 14px;
+}
+
+.misGifosButtonHolder {
+    width: 90%;
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.light,
+.light:hover {
+    background: #FFF4FD;
+}
+
+.mygifosContainer {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+#timer {
+    width: 124px;
+    height: 36px;
+    background: #FFFFFF;
+    border: 1px solid #979797;
+    box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+}
+
+#preview {
+    background: #FFFFFF;
+    border: 1px solid #979797;
+    box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+    position: relative;
+    width: 90%;
+    height: 480px;
+    margin: auto;
+    margin-top: 15px;
+    filter: grayscale(100%);
+}
+
+.listo {
+    background: #FF6161;
+    border: 1px solid #110038;
+    box-shadow: inset -1px -1px 0 0 #993A3A, inset 1px 1px 0 0 #FFFFFF;
+}
+
+.listo span {
+    font-size: 16px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 18px;
+}
+
+.listo:hover {
+    background: #dd4040;
 }
 
 @media (max-width:900px) {

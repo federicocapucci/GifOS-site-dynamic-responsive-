@@ -10,7 +10,7 @@
     <link id="styler" rel="stylesheet" href="./styles/SailorDay.css">
 </head>
 
-<body onload="getRandom(),getTrending()">
+<body onload="getRandom(),getTrending(),showAllMyGifos()">
 
     <div class="heading">¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de visitas: 31.087.007 </div>
 
@@ -20,8 +20,13 @@
         </div>
 
         <div class="gifosInstructions">
-            <div class=searchtop>Crear Guifos</div>
-            <div>
+
+
+
+            <div class=searchtopgifos id="mygifosbanner">Crear Guifos</div>
+            <video class="hide"></video>
+            <img src="" alt="" class="hide" id="preview">
+            <div id=info>
                 <div> <img src="assets/window img.png" alt="window" style="width: 40px;margin-top: 20px;margin-left: 20px;"> <b style="font-size: 18px; margin-left: 40px;line-height: 22px;"> Aquí podrás crear tus propios guifos </b> </div>
                 <div>
                     <pre class="testing">
@@ -41,9 +46,32 @@
                     </pre>
                 </div>
             </div>
+
+            <div class="misGifosButtonHolder">
+                <div class="hide" id="timer"></div>
+                <div>
+                    <button class="btn_global light" id="cancelBtnHolder">
+                    <a href="./index.html"><span class="btn__text-container">Cancelar</span></a>
+                   </button>
+                    <button class="btn_global" id=recordBtnHolder>
+                    <span class="btn__text-container hide" id="recordBtnImg" onclick="empezar()"><img src="" alt=""></span>    
+                    <span class="btn__text-container" id="recordBtn" onclick="empezar()">Aceptar</span>
+                   </button>
+                    <a class="btn_global light hide" id="upload" style="padding: 5px 10px">Upload</a>
+                    <a class="btn_global light hide" id="upload" style="padding: 5px 10px">Copiar Enlace</a>
+                    <a class="btn_global light hide" id="download" style="padding: 5px 10px">Descargar GIF</a>
+                    <a class="btn_global light hide" id="copyURL" style="padding: 5px 10px" onclick="ClipURL()">Copiar URL</a>
+                </div>
+            </div>
+
         </div>
 
+        <div class="mygifosMainContainer">
+            <P class="separator" id="miGifosBar">Mis Guifos:</P>
+            <div class="mygifosContainer">
+            </div>
 
+        </div>
 
 
     </div>
@@ -66,7 +94,7 @@
                     <button class="btn_arrow" onclick="showThemes()">
                     <img src="./assets/dropdown.svg" alt="dropdown">                    
                    </button>
-                    <a href="#" class="misgifos"><span>M</span>is Guifos</a>
+                    <a href="#" class="misgifos" onclick="migifsection()"><span>M</span>is Guifos</a>
                 </div>
                 <div class="themeContainer hide ">
                     <a href="#" onclick="changeThemeDay()"><span>S</span>ailor Day</a>
@@ -105,6 +133,8 @@
 
     <!-- script -->
     <script src="Scripts/scripts.js"></script>
+    <script src="Scripts/upload.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/RecordRTC/5.6.1/RecordRTC.js"></script>
 
 </body>
 

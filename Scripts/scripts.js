@@ -1,3 +1,4 @@
+//Todas las Variables
 const apiKey = 'Q00yquB0V7z2kBILVpxWX2yjxFghtbu3';
 let tagcontainer = document.querySelector('.tagcontainer');
 let imgcontainer = document.querySelector('.imgcontainer');
@@ -5,7 +6,7 @@ let searchtext = document.createElement('p');
 searchtext.classList.add('separator');
 searchlimit = 50;
 
-
+//Funciones
 let getRandom = async() => {
 
     randomDivArray = document.getElementsByClassName('randomSubContainer');
@@ -102,8 +103,8 @@ let checkKey = async(event) => {
         icon.src = "./assets/lupa_inactive.svg"
         searchSuggestions.classList.add('hide')
     } else if (event.code === 'Enter') {
-        empezarBusqueda();
 
+        empezarBusqueda();
 
     } else {
         button.disabled = false;
@@ -114,6 +115,22 @@ let checkKey = async(event) => {
         let suggestion2 = document.createElement('a');
         let suggestion3 = document.createElement('a');
 
+
+        if (input.value.length > 2) {
+            searchSuggestions.classList.remove('hide')
+
+            const suggested = await fetch('http://api.giphy.com/v1/tags/related/' + input.value + '?api_key=' + apiKey);
+            const suggestedjsoned = await suggested.json();
+            // console.log(jsoned)
+            searchSuggestions.innerHTML = "";
+            console.log(searchSuggestions.innerHTML);
+            suggestion.innerHTML = suggestedjsoned.data[0].name;
+            searchSuggestions.appendChild(suggestion);
+            suggestion2.innerHTML = suggestedjsoned.data[1].name;
+            searchSuggestions.appendChild(suggestion2);
+            suggestion3.innerHTML = suggestedjsoned.data[2].name;
+            searchSuggestions.appendChild(suggestion3);
+        }
         suggestion.onclick = (() => {
 
             document.getElementById('search').value = suggestion.innerHTML;
@@ -132,21 +149,6 @@ let checkKey = async(event) => {
             empezarBusqueda();
 
         })
-        if (input.value.length > 2) {
-            searchSuggestions.classList.remove('hide')
-
-            const suggested = await fetch('http://api.giphy.com/v1/tags/related/' + input.value + '?api_key=' + apiKey);
-            const suggestedjsoned = await suggested.json();
-            // console.log(jsoned)
-            searchSuggestions.innerHTML = "";
-            console.log(searchSuggestions.innerHTML);
-            suggestion.innerHTML = suggestedjsoned.data[0].name;
-            searchSuggestions.appendChild(suggestion);
-            suggestion2.innerHTML = suggestedjsoned.data[1].name;
-            searchSuggestions.appendChild(suggestion2);
-            suggestion3.innerHTML = suggestedjsoned.data[2].name;
-            searchSuggestions.appendChild(suggestion3);
-        }
     }
 }
 
@@ -276,7 +278,6 @@ const showThemes = () => {
 
     let themeContainer = document.getElementsByClassName('themeContainer')[0];
     themeContainer.classList.toggle('hide');
-
 }
 
 
