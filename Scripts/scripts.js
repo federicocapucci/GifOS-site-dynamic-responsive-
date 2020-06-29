@@ -132,7 +132,7 @@ let checkPressedKey = async(event) => { /* Funcion para chequear las teclas pres
         if (input.value.length > 2) {
             searchSuggestions.classList.remove('hide')
 
-            const suggested = await fetch('http://api.giphy.com/v1/tags/related/' + input.value + '?api_key=' + apiKey);
+            const suggested = await fetch('https://api.giphy.com/v1/tags/related/' + input.value + '?api_key=' + apiKey);
             const suggestedjsoned = await suggested.json();
 
             searchSuggestions.innerHTML = "";
@@ -185,7 +185,7 @@ let empezarBusqueda = () => {
 
 
 let getSearchResults = async(search) => {
-    const found = await fetch('http://api.giphy.com/v1/gifs/search?q=' + search + '&api_key=' + apiKey + '&limit=' + searchlimit);
+    const found = await fetch('https://api.giphy.com/v1/gifs/search?q=' + search + '&api_key=' + apiKey + '&limit=' + searchlimit);
     const jsoned = await found.json();
 
     searchtext.innerHTML = 'Resultados para "' + search + '".';

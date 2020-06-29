@@ -188,7 +188,7 @@ const createDataForApi = async() => {
 
     let form = new FormData();
     form.append('file', recorder.getBlob(), 'prueba.gif');
-    const urlUpload = 'http://upload.giphy.com/v1/gifs'
+    const urlUpload = 'https://upload.giphy.com/v1/gifs'
     const configUpload = {
         method: 'POST',
         mode: 'cors',
