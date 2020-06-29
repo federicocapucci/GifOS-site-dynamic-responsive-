@@ -106,7 +106,7 @@ let grabar = () => {
         recordBtnHolder.style.background = "#FFF4FD"
         recordBtn.style.color = "black";
         recordBtn.innerHTML = "Repetir Toma";
-        recordBtn.onclick = repetir;
+        recordBtn.onclick = refresh;
         mygifosbanner.innerHTML = "Vista previa";
 
         recorder.stopRecording(() => {
@@ -270,12 +270,8 @@ let ClipURL = async() => {
     setTimeout(() => p.style.display = "none", 1000)
 }
 
-let repetir = () => {
-
+let refresh = () => {
     window.location.reload()
-
-
-
 }
 
 

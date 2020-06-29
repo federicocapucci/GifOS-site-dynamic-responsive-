@@ -17,8 +17,8 @@
 
     <div class="fullPageContainer hide" id="gifosContainer">
         <div class="logo">
-            <a href="#"><img src="assets/arrow.svg" alt="arrow back" id="" onclick="migifsection()"></a>
-            <a href="#"><img src="" alt="gifos logo" id="gifoslogo" onclick="migifsection()"></a>
+            <a href="#"><img src="assets/arrow.svg" alt="arrow back" onclick="migifsection()"></a>
+            <a href="#"><img src="#" alt="gifos logo" id="gifoslogo" onclick="migifsection()"></a>
         </div>
 
         <div class="gifosInstructions">
@@ -27,9 +27,9 @@
 
             <div class=searchtopgifos id="mygifosbanner">Crear Guifos</div>
             <video class="hide"></video>
-            <img src="" alt="" class="hide" id="preview">
+            <img src="#" alt="preview" class="hide" id="preview">
             <div id=info>
-                <div> <img src="assets/window img.png" alt="window" style="width: 40px;margin-top: 20px;margin-left: 20px;"> <b style="font-size: 18px; margin-left: 40px;line-height: 22px;"> Aquí podrás crear tus propios
+                <div> <img src="assets/window_img.png" alt="window" style="width: 40px;margin-top: 20px;margin-left: 20px;"> <b style="font-size: 18px; margin-left: 40px;line-height: 22px;"> Aquí podrás crear tus propios
                         guifos </b> </div>
                 <div>
                     <pre class="testing">
@@ -57,14 +57,13 @@
                 <div id="misGifosButtonSubHolder">
                     <a class="btn_global prop hide" id="copyURL" onclick="ClipURL()">Copiar Enlace Guifo</a>
                     <a class="btn_global prop hide" id="download">Descargar Guifo</a>
-                    <button class="btn_global light" id="cancelBtnHolder">
-                        <a href="./index.html"><span class="btn__text-container">Cancelar</span></a>
+                    <button class="btn_global light" id="cancelBtnHolder" onclick="refresh()">Cancelar
                     </button>
                     <button class="imgbtn hide" id=recordBtnImgHolder>
-                        <img src="assets/camera.svg" alt="" id=recordBtnImg>
+                        <img src="assets/camera.svg" alt="Button Pic" id=recordBtnImg>
                     </button>
                     <button class="btn_global" id=recordBtnHolder>
-                        <span class="" id="recordBtn" onclick="empezar()">Aceptar</span>
+                        <span id="recordBtn" onclick="empezar()">Aceptar</span>
                     </button>
                     <a class="btn_global prop hide" id="upload">Subir Guifo</a>
 
