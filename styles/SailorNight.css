@@ -181,7 +181,7 @@
 }
 
 .imgbtn:hover {
-    background: #2E32FB;
+    background: #cc3ccc;
     outline: 1px dotted black;
     outline-offset: -4px;
 }

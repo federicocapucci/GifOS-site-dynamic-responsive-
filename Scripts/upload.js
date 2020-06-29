@@ -84,6 +84,7 @@ let grabar = () => {
             recordBtnHolder.style.opacity = 1
             recordBtnImgHolder.style.opacity = 1
         }, 900);
+        recordBtnImgHolder.style.top = "4px";
         recordBtn.innerHTML = "Listo";
 
         recorder = RecordRTC(stream, {
