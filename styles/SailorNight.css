@@ -1,33 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 20px;
+    box-sizing: border-box;
+    border: 1px dotted transparent;
+    transition: all 1s ease-in linear;
+    text-decoration: none;
+}
+
 .search-suggestions {
     display: flex;
     flex-direction: column;
     margin-top: -32px;
     padding: 5px;
     background: #B4B4B4;
-    box-shadow: inset -2px -2px 0 0 #8F8F8F, inset 2px 2px 0 0 #FFFFFF;
+    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
 }
 
 .search-suggestions a {
-    width: 91.5%;
-    background: #B4B4B4;
+    background: #CCCCCC;
     border: 1px solid #808080;
-    box-shadow: inset -1px -1px 0 0 #8F8F8F, inset 1px 1px 0 0 #FFFFFF;
+    box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
     padding: 5px;
     margin: 5px;
     font-size: 14px;
 }
 
 .search-suggestions a:hover {
-    background: #A4A4A4;
-    box-shadow: inset -2px -2px 0 0 #8F8F8F, inset 2px 2px 0 0 #FFFFFF;
+    background: #B4B4B4;
+    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
     cursor: pointer;
-    border: 1px solid #110038;
+    outline: 1px dotted black;
+    outline-offset: -3px;
 }
 
 #search {
     height: 48px;
     font-size: 16px;
-    color: #8F8F8F;
+    color: #B4B4B4;
     letter-spacing: 0;
     line-height: 22px;
 }
@@ -38,6 +49,8 @@
 
 .btncontainer {
     position: relative;
+    display: flex;
+    align-items: baseline;
 }
 
 .themeContainer {
@@ -51,7 +64,7 @@
     justify-content: space-evenly;
     align-items: center;
     background: #B4B4B4;
-    box-shadow: inset -2px -2px 0 0 #8F8F8F, inset 2px 2px 0 0 #FFFFFF;
+    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
 }
 
 .themeContainer a {
@@ -59,9 +72,9 @@
     text-indent: 10px;
     width: 150px;
     height: 36px;
-    background: #F0F0F0;
+    background: #CCCCCC;
     border: 1px solid #808080;
-    box-shadow: inset -1px -1px 0 0 #8F8F8F, inset 1px 1px 0 0 #FFFFFF;
+    box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
     font-size: 15px;
     text-decoration: none;
     color: black;
@@ -72,9 +85,9 @@
 }
 
 .themeContainer a:hover {
-    background: blue;
+    background: #2E32FB;
     color: white;
-    border: 1px solid white;
+    border: 1px solid #2E32FB;
     box-shadow: inset -1px -1px 0 0 #E6DCE4, inset 1px 1px 0 0 #FFFFFF;
 }
 
@@ -95,6 +108,11 @@
     border: 1px dotted white;
 }
 
+.misgifos:active {
+    color: gray;
+    border: 1px dotted transparent;
+}
+
 .misgifos span {
     font-size: 16px;
     text-decoration: underline;
@@ -105,7 +123,6 @@
 
 .btn_global {
     cursor: pointer;
-    color: white;
     outline: none;
     width: 144px;
     height: 36px;
@@ -126,44 +143,47 @@
     border: 1px solid #110038;
     -webkit-box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
     box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
-    color: white;
-}
-
-.btn_arrow img {
-    color: white;
 }
 
 .btn_global span {
     outline: none;
     font-size: 16px;
-    color: white;
+    color: #FFFFFF;
     letter-spacing: 0;
     text-align: center;
     line-height: 18px;
 }
 
 .btn_global:hover {
-    background: #dd2ddc;
-    border: 1px dotted white;
+    background: #cc3ccc;
+    outline: 1px dotted black;
+    outline-offset: -4px;
 }
 
 .btn_arrow:hover {
-    background: #dd2ddc;
-    border: 1px dotted white;
+    background: #cc3ccc;
+    outline: 1px dotted black;
+    outline-offset: -4px;
 }
 
-* {
+.imgbtn {
+    position: relative;
+    left: 10px;
+    bottom: -3px;
     margin: 0;
-    padding: 0;
-    font-family: 'Chakra Petch', sans-serif;
-    font-size: 20px;
-    box-sizing: border-box;
-    border: 1px dotted transparent;
-    transition: all 1s ease-in linear;
+    width: 36px;
+    cursor: pointer;
+    outline: none;
+    height: 36px;
+    background: #EE3EFE;
+    border: 1px solid #110038;
+    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
 }
 
-.hide {
-    display: none;
+.imgbtn:hover {
+    background: #2E32FB;
+    outline: 1px dotted black;
+    outline-offset: -4px;
 }
 
 body {
@@ -218,9 +238,24 @@ body {
     border: none;
 }
 
+.searchtopgifos {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 35px;
+    background-image: linear-gradient(270deg, #EE3EFE 0%, #2E32FB 100%);
+    color: white;
+    line-height: 15px;
+    border: none;
+    font-size: 14;
+    font-weight: bold;
+    line-height: 35px;
+    text-indent: 5px;
+}
+
 .logo {
+    display: flex;
     margin-top: 35px;
-    margin-right: 150px;
     width: 80px;
     height: 80px;
 }
@@ -236,7 +271,7 @@ body {
     background-color: plum;
     margin-bottom: 30px;
     background: #B4B4B4;
-    box-shadow: inset -2px -2px 0 0 #8F8F8F, inset 2px 2px 0 0 #FFFFFF;
+    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
 }
 
 .searchcontainer>div {
@@ -271,20 +306,21 @@ body {
     width: 112px;
     height: 36px;
     font-size: 16px;
-    background: #c1c1c1;
-    border: 1px solid #808080;
-    box-shadow: inset -1px -1px 0 0 #8F8F8F, inset 1px 1px 0 0 #FFFFFF;
+    background: #D4D4D4;
+    box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
     line-height: 35px;
-    border: 1px dotted transparent;
+    border: 1px solid #333;
     cursor: pointer;
 }
 
 .search-button-on {
     background: #EE3EFE;
+    color: white;
 }
 
-.search-button:hover {
-    border: 1px dotted black;
+.search-button-on:hover {
+    outline: 1px dotted black;
+    outline-offset: -3PX;
 }
 
 .search-button img {
@@ -293,25 +329,21 @@ body {
 }
 
 .search-button:disabled {
-    background: #c1c1c1;
+    background: #C4C4C4;
     cursor: default;
 }
 
-.search-button:disabled:hover {
-    border: 1px dotted transparent;
-}
-
 .separator {
+    background: #FFFAFE;
     width: 100%;
+    border: 1px solid #2E32FB;
+    box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #80687D;
     height: 32px;
     margin: 20px 0 0 0;
     font-size: 14px;
     color: #110038;
     line-height: 30px;
     text-indent: 10px;
-    background: #FFFAFE;
-    border: 1px solid #2E32FB;
-    box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #110038;
 }
 
 .tagcontainer {
@@ -330,16 +362,17 @@ body {
     padding: 8px 5px;
     margin: 3px;
     font-size: 14px;
-    background-color: #2e32fb;
+    background-color: #2E32FB;
     color: white;
     cursor: pointer;
     margin-bottom: 5px;
-    border: 1px solid #1e21fb;
+    border: 1px solid #4c2f99;
 }
 
 .tagcontainer button:hover {
     background-color: #3070d5;
-    border: 1px dotted white;
+    outline: 1px dotted black;
+    outline-offset: -4px;
 }
 
 .randomcontainer {
@@ -362,7 +395,7 @@ body {
     justify-content: stretch;
     align-items: stretch;
     background: #B4B4B4;
-    box-shadow: inset -2px -2px 0 0 #8F8F8F, inset 2px 2px 0 0 #FFFFFF;
+    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
     margin: 0 10px 15px 10px;
 }
 
@@ -372,8 +405,15 @@ body {
     margin: auto;
     height: 350px;
     box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #fff;
-    background: linear-gradient(#EE3EFE, #2E32FB);
+    animation: changecolors 1s linear infinite alternate both;
     overflow: hidden;
+    outline: 2px solid #B4B4B4;
+    outline-offset: -2px;
+}
+
+.randomsize:hover {
+    outline: 1px dotted black;
+    outline-offset: -3px;
 }
 
 .randSpan {
@@ -414,7 +454,7 @@ body {
     padding: 8px 5px;
     margin: 3px;
     font-size: 14px;
-    background-color: #4180f6;
+    background-color: #2E32FB;
     color: white;
     cursor: pointer;
     margin-bottom: 5px;
@@ -423,19 +463,20 @@ body {
 
 .button:hover {
     background: #3A72DB;
-    border: 1px solid #4C2F99;
     box-shadow: inset -2px -2px 0 0 #284F99, inset 2px 2px 0 0 #FFFFFF;
+    outline: 1px dotted black;
+    outline-offset: -4px;
 }
 
 .tags {
     position: absolute;
     top: 91%;
-    left: 1px;
+    left: 3px;
     font-size: 14px;
     font-weight: bold;
     text-indent: 5px;
     line-height: 30px;
-    width: 101%;
+    width: 99%;
     margin: auto;
     height: 30px;
     color: white;
@@ -469,9 +510,10 @@ a:hover+a {
     min-width: 240px;
     height: 350px;
     box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #fff;
-    background: linear-gradient(#EE3EFE, #2E32FB);
+    /* background: linear-gradient(#EE3EFE, #2E32FB); */
     overflow: hidden;
     margin-bottom: 24px;
+    animation: changecolors 1s linear 2 alternate both;
 }
 
 .bigsize {
@@ -481,9 +523,19 @@ a:hover+a {
     min-width: 240px;
     height: 350px;
     box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #fff;
-    background: linear-gradient(#EE3EFE, #2E32FB);
+    /* background: linear-gradient(#EE3EFE, #2E32FB); */
     overflow: hidden;
     margin-bottom: 24px;
+    animation: changecolors 1s linear 2 alternate both;
+}
+
+@keyframes changecolors {
+    0% {
+        background-color: #EE3EFE;
+    }
+    100% {
+        background-color: #2E32FB;
+    }
 }
 
 .pic {
@@ -498,6 +550,8 @@ a:hover+a {
 .pic:hover {
     width: 99%;
     height: 99%;
+    outline: 1px dotted black;
+    outline-offset: -3px;
 }
 
 .picHeader {
@@ -506,6 +560,135 @@ a:hover+a {
     width: auto;
     height: 20px;
     background-color: blue;
+}
+
+.gifosInstructions {
+    position: relative;
+    margin: 100px auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    max-width: 684px;
+    height: auto;
+    background: #B4B4B4;
+    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+}
+
+video {
+    background: #FFFFFF;
+    border: 1px solid #979797;
+    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #000000;
+    position: relative;
+    width: 90%;
+    margin: auto;
+    margin-top: 15px;
+}
+
+.gifosInstructions * {
+    font-size: 14px;
+}
+
+.misGifosButtonHolder {
+    width: 100%;
+    height: auto;
+    margin: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.misGifosButtonSubHolder {
+    width: 100%;
+    height: auto;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.light,
+.light:hover {
+    background: #2E32FB;
+}
+
+.mygifosContainer {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+#timer {
+    width: 124px;
+    height: 36px;
+    background: #FFFFFF;
+    border: 1px solid #979797;
+    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #000000;
+    line-height: 30px;
+    text-indent: 30px;
+    font-size: 18px;
+}
+
+#preview {
+    background: #FFFFFF;
+    border: 1px solid #979797;
+    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #000000;
+    position: relative;
+    width: 90%;
+    height: 480px;
+    margin: auto;
+    margin-top: 15px;
+    filter: grayscale(100%);
+}
+
+.listo {
+    background: #FF6161;
+    border: 1px solid #110038;
+    box-shadow: inset -1px -1px 0 0 #993A3A, inset 1px 1px 0 0 #FFFFFF;
+}
+
+.listo span {
+    font-size: 16px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 18px;
+}
+
+.listo:hover {
+    background: #dd4040;
+}
+
+.prop {
+    padding: 6.5px 10px;
+    width: 250px;
+    height: 40px;
+    font-size: 16px;
+    background-color: #EE3EFE !important;
+    margin: 10px;
+    text-align: center;
+    vertical-align: middle;
+    color: black;
+    background: #2E32FB;
+    border: 1px solid #110038;
+    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+}
+
+.pushdown {
+    margin-top: 30px;
+    background: #EE3EFE;
+}
+
+.exito {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.hide {
+    display: none;
 }
 
 @media (max-width:900px) {

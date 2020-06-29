@@ -4,7 +4,9 @@ let gifosInstructions = document.getElementsByClassName('gifosInstructions')[0];
 let mygifosbanner = document.getElementById('mygifosbanner');
 let info = document.getElementById('info');
 let screen = document.getElementsByTagName('video')[0];
+let misGifosButtonHolder = document.getElementsByClassName('misGifosButtonHolder')[0];
 let cancelBtnHolder = document.getElementById('cancelBtnHolder');
+let recordBtnImgHolder = document.getElementById('recordBtnImgHolder');
 let recordBtnImg = document.getElementById('recordBtnImg');
 let recordBtn = document.getElementById('recordBtn');
 let recordBtnHolder = document.getElementById('recordBtnHolder');
@@ -31,19 +33,16 @@ let empezar = () => {
     cancelBtnHolder.classList.toggle('hide');
     screen.classList.toggle('hide');
     info.classList.toggle('hide');
-    recordBtnImg.classList.toggle('hide');
-    recordBtnImg.src = "./assets/camera.svg"
     mygifosbanner.innerHTML = "Un chequeo antes de empezar";
 
     PrenderyMostrarCamara(); /*Funcion 1*/
     recordBtn.onclick = grabar; /*Cambio la funcion en el click*/
+    recordBtnImgHolder.onclick = grabar;
 
 }
 
 async function PrenderyMostrarCamara() {
     preview.src = "";
-    upload.innerHTML = "Upload"
-
     /*Activa la camara*/
     stream = await navigator.mediaDevices.getUserMedia({
             audio: false,
@@ -57,7 +56,9 @@ async function PrenderyMostrarCamara() {
     screen.srcObject = stream;
     screen.play();
     console.log("Fede: Camara Prendida")
+    recordBtnImgHolder.classList.toggle('hide')
     recordBtn.innerHTML = "Capturar";
+
 
 }
 
@@ -74,11 +75,15 @@ let grabar = () => {
 
         screen.style.display = "block";
         console.log("Fede: Grabando")
-
-        let newimg = document.createElement('img');
-        newimg.src = "./assets/recording.svg"
-        recordBtnHolder.insertBefore(newimg, recordBtnHolder.firstChild)
+        recordBtnHolder.style.opacity = 0;
+        recordBtnImgHolder.style.opacity = 0;
+        recordBtnImg.src = "./assets/recording.svg";
+        recordBtnImgHolder.classList.add('listo');
         recordBtnHolder.classList.add('listo');
+        setTimeout(() => {
+            recordBtnHolder.style.opacity = 1
+            recordBtnImgHolder.style.opacity = 1
+        }, 900);
         recordBtn.innerHTML = "Listo";
 
         recorder = RecordRTC(stream, {
@@ -89,16 +94,18 @@ let grabar = () => {
             hidden: 120,
             onGifRecordingStarted: function() {
                 console.log('started')
-                TimerFn();
             },
         });
         recorder.startRecording();
-
+        TimerFn();
 
     } else { /*Si NO estoy grabando */
+        recordBtnImgHolder.classList.add('hide');
         upload.classList.toggle('hide');
-
-        recordBtn.innerHTML = "Repetir";
+        recordBtnHolder.style.background = "#FFF4FD"
+        recordBtn.style.color = "black";
+        recordBtn.innerHTML = "Repetir Toma";
+        recordBtn.onclick = repetir;
         mygifosbanner.innerHTML = "Vista previa";
 
         recorder.stopRecording(() => {
@@ -164,6 +171,19 @@ const createDataForApi = async() => {
     console.log("subido exitosamente");
     mygifosbanner.innerHTML = "Guifo subido con exito";
     preview.src = objectURL;
+    preview.style.width = "50%";
+    preview.style.height = "240px";
+    preview.style.margin = "5px";
+    misGifosButtonHolder.style.width = "45%";
+    let p = document.createElement('p');
+    p.innerHTML = "Guifo creado con éxito";
+    p.classList.add('exito');
+    let misGifosButtonSubHolder = document.getElementById('misGifosButtonSubHolder');
+    misGifosButtonSubHolder.classList.toggle('misGifosButtonSubHolder');
+    misGifosButtonSubHolder.insertBefore(p, misGifosButtonSubHolder.firstChild);
+
+
+
     savedgif = "https://media1.giphy.com/media/" + ApiUploadJson.data.id + "/giphy.gif";
     console.log("https://media1.giphy.com/media/" + ApiUploadJson.data.id + "/giphy.gif");
     recorder.destroy();
@@ -174,6 +194,7 @@ const createDataForApi = async() => {
     upload.classList.toggle('hide');
     recordBtnHolder.classList.toggle('listo');
     recordBtn.innerHTML = "Listo";
+    recordBtnHolder.classList.add('pushdown');
     download.classList.toggle('hide');
     copyURL.classList.toggle('hide');
     recordBtn.onclick = reloadMyGifos;
@@ -198,7 +219,7 @@ let showAllMyGifos = () => {
 
             mygifo = { name: keys, id: value, }
 
-            if (value.length > 4) gifosArray.push(mygifo);
+            if (value.length == 18) gifosArray.push(mygifo); /* Todas los ids son de 18 letras, una buena forma de filtrar localstorage */
 
         }
         console.log(gifosArray)
@@ -258,6 +279,13 @@ let ClipURL = async() => {
     setTimeout(() => p.style.display = "none", 1000)
 }
 
+let repetir = () => {
+
+    window.location.reload()
+
+
+
+}
 
 
 

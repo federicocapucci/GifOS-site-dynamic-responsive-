@@ -165,8 +165,24 @@
     outline-offset: -4px;
 }
 
-.hide {
-    display: none;
+.imgbtn {
+    position: relative;
+    left: 10px;
+    bottom: -3px;
+    margin: 0;
+    width: 36px;
+    cursor: pointer;
+    outline: none;
+    height: 36px;
+    background: #F7C9F3;
+    border: 1px solid #110038;
+    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+}
+
+.imgbtn:hover {
+    background: #E6BBE2;
+    outline: 1px dotted black;
+    outline-offset: -4px;
 }
 
 body {
@@ -237,6 +253,7 @@ body {
 }
 
 .logo {
+    display: flex;
     margin-top: 35px;
     width: 80px;
     height: 80px;
@@ -288,12 +305,12 @@ body {
     width: 112px;
     height: 36px;
     font-size: 16px;
-    background: #E6E6E6;
-    border: 1px solid #808080;
-    box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
     line-height: 35px;
     border: 1px dotted transparent;
     cursor: pointer;
+    background: #9b9a9a;
+    border: 1px solid #808080;
+    box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
 }
 
 .search-button-on {
@@ -554,7 +571,7 @@ a:hover+a {
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
-    width: 684px;
+    max-width: 684px;
     height: auto;
     background: #E6E6E6;
     box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
@@ -575,9 +592,20 @@ video {
 }
 
 .misGifosButtonHolder {
-    width: 90%;
-    margin: 10px;
+    width: 100%;
+    height: auto;
+    margin: 8px;
     display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.misGifosButtonSubHolder {
+    width: 100%;
+    height: auto;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
 }
@@ -601,6 +629,9 @@ video {
     background: #FFFFFF;
     border: 1px solid #979797;
     box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+    line-height: 30px;
+    text-indent: 30px;
+    font-size: 18px;
 }
 
 #preview {
@@ -631,6 +662,36 @@ video {
 
 .listo:hover {
     background: #dd4040;
+}
+
+.prop {
+    padding: 6.5px 10px;
+    width: 250px;
+    height: 40px;
+    font-size: 16px;
+    background-color: #F7C9F3 !important;
+    margin: 10px;
+    text-align: center;
+    vertical-align: middle;
+    color: black;
+    background: #FFF4FD;
+    border: 1px solid #110038;
+    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+}
+
+.pushdown {
+    margin-top: 30px;
+    background: #F7C9F3;
+}
+
+.exito {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.hide {
+    display: none;
 }
 
 @media (max-width:900px) {

@@ -3,7 +3,9 @@ const apiKey = 'Q00yquB0V7z2kBILVpxWX2yjxFghtbu3';
 let tagcontainer = document.querySelector('.tagcontainer');
 let imgcontainer = document.querySelector('.imgcontainer');
 let searchtext = document.createElement('p');
+let themepicker = localStorage.getItem('th') || "";
 searchtext.classList.add('separator');
+
 searchlimit = 50;
 
 //Funciones
@@ -38,7 +40,7 @@ let getRandom = async() => {
     for (let i = 0; i < randomImgArray.length; i++) {
         const randomitems = await fetch('https://api.giphy.com/v1/gifs/random?api_key=' + apiKey);
         const randomitemsjson = await randomitems.json();
-        // console.log(randomitemsjson);
+
         const x = document.createElement('img')
         x.src = './assets/close.svg', x.alt = 'close btn';
         x.onclick = (() => { x.classList.add('hide') });
@@ -59,7 +61,7 @@ let getRandom = async() => {
 let getTrending = async() => {
     const trending = await fetch('https://api.giphy.com/v1/gifs/trending?api_key=' + apiKey + '&limit=' + searchlimit);
     const trendingjson = await trending.json();
-    // console.log(trendingjson);
+
     for (let i = 0; i < trendingjson.data.length; i++) {
         const newdiv = document.createElement('div');
         const newimg = document.createElement('img');
@@ -121,9 +123,9 @@ let checkKey = async(event) => {
 
             const suggested = await fetch('http://api.giphy.com/v1/tags/related/' + input.value + '?api_key=' + apiKey);
             const suggestedjsoned = await suggested.json();
-            // console.log(jsoned)
+
             searchSuggestions.innerHTML = "";
-            console.log(searchSuggestions.innerHTML);
+
             suggestion.innerHTML = suggestedjsoned.data[0].name;
             searchSuggestions.appendChild(suggestion);
             suggestion2.innerHTML = suggestedjsoned.data[1].name;
@@ -164,7 +166,7 @@ let empezarBusqueda = () => {
         document.getElementsByClassName('separators')[0].classList.remove('hide');
         getTrending();
     } else {
-        // console.log('prueba:' + termino);
+
         getSearchResults(termino);
     }
 }
@@ -174,7 +176,7 @@ let empezarBusqueda = () => {
 let getSearchResults = async(search) => {
     const found = await fetch('http://api.giphy.com/v1/gifs/search?q=' + search + '&api_key=' + apiKey + '&limit=' + searchlimit);
     const jsoned = await found.json();
-    // console.log(jsoned);
+
     searchtext.innerHTML = 'Resultados para "' + search + '".';
 
 
@@ -201,7 +203,7 @@ let getSearchResults = async(search) => {
 
             if (tagcontent != '' && tagcontent.length > 3) {
 
-                // console.log(tagbtn.innerHTML = tagcontent);
+
 
                 tagcontainer.appendChild(tagbtn);
 
@@ -257,8 +259,11 @@ const changeThemeDay = () => {
     let logo = document.getElementById('toplogo');
     logo.src = "./assets/gifOF_logo.png"
     let favicon = document.getElementById('favicon');
-    favicon.href = "./assets/gifOF_logo.png"
-    showThemes();
+    favicon.href = "./assets/gifOF_logo.png";
+    themepicker = localStorage.setItem("th", "Day")
+
+    let themeContainer = document.getElementsByClassName('themeContainer')[0];
+    themeContainer.classList.add('hide');
 
 
 }
@@ -271,7 +276,13 @@ const changeThemeNight = () => {
     logo.src = "./assets/gifOF_logo_dark.png"
     let favicon = document.getElementById('favicon');
     favicon.href = "./assets/gifOF_logo_dark.png"
-    showThemes();
+    let icon = document.getElementById('s-icon');
+    icon.src = "./assets/lupa_light.svg"
+    themepicker = localStorage.setItem("th", "Night")
+
+    let themeContainer = document.getElementsByClassName('themeContainer')[0];
+    themeContainer.classList.add('hide');
+
 }
 
 const showThemes = () => {
@@ -280,9 +291,34 @@ const showThemes = () => {
     themeContainer.classList.toggle('hide');
 }
 
+const defaultheme = () => {
+    let styler = document.getElementById('styler');
+
+    if (themepicker == "") {
+
+        themepicker = localStorage.setItem("th", "Day")
+
+
+    } else {
+
+
+        if (localStorage.getItem('th') == "Night") {
+
+            changeThemeNight();
+        } else {
+            changeThemeDay();
+
+        }
+
+
+
+    }
+
+}
+
 
 let migifsection = () => {
-
+    gifosInstructions.classList.remove('hide');
     let gifosContainer = document.getElementById('gifosContainer');
     let mainContainer = document.getElementById('mainContainer');
     let gifoslogo = document.getElementById('gifoslogo');
@@ -290,5 +326,17 @@ let migifsection = () => {
     gifoslogo.src = toplogo.src;
     gifosContainer.classList.toggle('hide');
     mainContainer.classList.toggle('hide');
+}
 
+
+let migifsection2 = () => {
+
+    let gifosContainer = document.getElementById('gifosContainer');
+    let mainContainer = document.getElementById('mainContainer');
+    let gifoslogo = document.getElementById('gifoslogo');
+    gifosInstructions.classList.add('hide');
+    let toplogo = document.getElementById('toplogo');
+    gifoslogo.src = toplogo.src;
+    gifosContainer.classList.toggle('hide');
+    mainContainer.classList.toggle('hide');
 }
