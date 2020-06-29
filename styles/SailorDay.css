@@ -815,6 +815,31 @@ video {
     background: #dd4040;
 }
 
+.progress-bar {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: auto;
+    width: 322px;
+    height: 25px;
+    background-color: #B4B4B4;
+    position: absolute;
+    top: 64.2%;
+    left: 43%;
+}
+
+.progress-bar-item {
+    width: 15px;
+    height: 20px;
+    background-color: #999999;
+}
+
+.progress-bar-item-active {
+    width: 15px;
+    height: 20px;
+    background-color: #F7C9F3;
+}
+
 .prop {
     padding: 6.5px 10px;
     width: 250px;
@@ -855,3 +880,6 @@ video {
         width: 350px;
     }
 }
+
+
+/*Creado por Federico Capucci - 2020 - Cba -  Argentina*/

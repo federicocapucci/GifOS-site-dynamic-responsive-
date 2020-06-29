@@ -10,6 +10,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
+<!-- Al cargar la pagina, chequeo el tema a mostrar, creo los 4 items random dinamicamente, creo la seccion trending, y creo la seccion mis gifos,que esta oculta por default -->
+
 <body onload="defaultheme(), getRandom(),getTrending(),showAllMyGifos()">
     <div class="heading">¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de visitas: 31.087.007
     </div>
@@ -97,7 +99,7 @@
             <div class="searchtop">Buscar
             </div>
             <div>
-                <input type="text" autocomplete="off" placeholder="Busca lo que quieras!" id="search" onfocus="this.value='',checkKey()" onkeyup="checkKey(event)">
+                <input type="text" autocomplete="off" placeholder="Busca lo que quieras!" id="search" onfocus="this.value='',checkPressedKey()" onkeyup="checkPressedKey(event)">
                 <button class="search-button" id="search-button" onclick="empezarBusqueda()" disabled> <img id="s-icon"
                         src="./assets/lupa_inactive.svg" alt="buscar"> Buscar</button>
             </div>
@@ -121,3 +123,5 @@
 </body>
 
 </html>
+
+<!-- /*Creado por Federico Capucci - 2020 - Cba - Argentina*/ -->

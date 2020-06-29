@@ -8,8 +8,9 @@ searchtext.classList.add('separator');
 
 searchlimit = 50;
 
-//Funciones
-let getRandom = async() => {
+//Funciones de la pagina principal;
+
+let getRandom = async() => { /* Funcion para obtener los primeras 4 imagenes aleatoriamente*/
 
     randomDivArray = document.getElementsByClassName('randomSubContainer');
     randomSpanArray = document.getElementsByClassName('randSpan');
@@ -60,7 +61,7 @@ let getRandom = async() => {
 }
 
 
-let getTrending = async() => {
+let getTrending = async() => { /* Funcion para obtener una primera busqueda con todos los trending items*/
     const trending = await fetch('https://api.giphy.com/v1/gifs/trending?api_key=' + apiKey + '&limit=' + searchlimit);
     const trendingjson = await trending.json();
 
@@ -95,11 +96,18 @@ let getTrending = async() => {
     }
 }
 
-let checkKey = async(event) => {
+let checkPressedKey = async(event) => { /* Funcion para chequear las teclas presionadas en el input, y tomar decisiones basado en que aprieta el usuario*/
     let input = document.getElementById('search');
     let button = document.getElementById('search-button');
     let icon = document.getElementById('s-icon');
     let searchSuggestions = document.getElementsByClassName('search-suggestions')[0];
+
+    let theme = localStorage.getItem('th'); /*Chequeo que tema esta activo para poner la lupa correcta*/
+    if (theme == "Day") {
+        icon.src = "./assets/lupa.svg"
+    } else {
+        icon.src = "./assets/lupa_light.svg"
+    }
 
     if (input.value === "") {
         button.disabled = true;
@@ -108,11 +116,12 @@ let checkKey = async(event) => {
         searchSuggestions.classList.add('hide')
     } else if (event.code === 'Enter') {
 
+
         empezarBusqueda();
 
     } else {
         button.disabled = false;
-        icon.src = "./assets/lupa.svg"
+
         button.classList.add('search-button-on');
         searchSuggestions.innerHTML = '';
         let suggestion = document.createElement('a');
@@ -162,7 +171,7 @@ let empezarBusqueda = () => {
     tagcontainer.innerHTML = '';
     let termino = document.getElementById('search').value;
     document.getElementById('search').value = "";
-    checkKey(event);
+    checkPressedKey(event);
 
     if (termino == '') {
         document.getElementsByClassName('separators')[0].classList.remove('hide');
@@ -262,10 +271,10 @@ const changeThemeDay = () => {
     logo.src = "./assets/gifOF_logo.png"
     let favicon = document.getElementById('favicon');
     favicon.href = "./assets/gifOF_logo.png";
-    themepicker = localStorage.setItem("th", "Day")
-
+    themepicker = localStorage.setItem("th", "Day");
     let themeContainer = document.getElementsByClassName('themeContainer')[0];
     themeContainer.classList.add('hide');
+    checkPressedKey(event);
 
 
 }
@@ -277,13 +286,11 @@ const changeThemeNight = () => {
     let logo = document.getElementById('toplogo');
     logo.src = "./assets/gifOF_logo_dark.png"
     let favicon = document.getElementById('favicon');
-    favicon.href = "./assets/gifOF_logo_dark.png"
-    let icon = document.getElementById('s-icon');
-    icon.src = "./assets/lupa_light.svg"
-    themepicker = localStorage.setItem("th", "Night")
-
+    favicon.href = "./assets/gifOF_logo_dark.png";
+    themepicker = localStorage.setItem("th", "Night");
     let themeContainer = document.getElementsByClassName('themeContainer')[0];
     themeContainer.classList.add('hide');
+    checkPressedKey(event);
 
 }
 
@@ -298,7 +305,7 @@ const defaultheme = () => {
 
     if (themepicker == "") {
 
-        themepicker = localStorage.setItem("th", "Day")
+        themepicker = localStorage.setItem("th", "Day");
 
 
     } else {
@@ -342,3 +349,5 @@ let migifsection2 = () => {
     gifosContainer.classList.toggle('hide');
     mainContainer.classList.toggle('hide');
 }
+
+/*Creado por Federico Capucci - 2020 - Cba -  Argentina*/

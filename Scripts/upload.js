@@ -25,6 +25,7 @@ let clock = document.getElementById('timer');
 recording = false;
 
 
+
 // funciones
 
 
@@ -150,8 +151,35 @@ let TimerFn = () => {
     }, 1000);
 }
 
+let animateProgressBar = () => {
+    let counter = 0;
+    let progressBar = document.createElement('div');
+    progressBar.classList.add('progress-bar');
+    for (let i = 0; i < 18; i++) {
+        let progressBarItem = document.createElement('div');
+        progressBarItem.classList.add('progress-bar-item');
+        progressBar.appendChild(progressBarItem);
+    }
+
+    document.body.appendChild(progressBar);
+
+    setInterval(() => {
+        if (counter < 18) {
+
+            let progressBarItem = document.getElementsByClassName('progress-bar-item');
+            progressBarItem[counter].classList.toggle('progress-bar-item-active')
+            counter++;
+        } else {
+            counter = 0;
+        }
+    }, 100)
+}
+
+
+
 
 const createDataForApi = async() => {
+    animateProgressBar();
     mygifosbanner.innerHTML = "Subiendo Guifo";
     upload.innerHTML = "Subiendo..."
     preview.src = "./assets/uploading.png"
@@ -175,7 +203,8 @@ const createDataForApi = async() => {
     numOfMyGifos++;
     localStorage.setItem("numOfMyGifos", numOfMyGifos);
     localStorage.setItem("Gif#" + numOfMyGifos, ApiUploadJson.data.id);
-
+    let progressBar = document.getElementsByClassName('progress-bar')[0];
+    progressBar.style.display = "none";
     mygifosbanner.innerHTML = "Guifo subido con exito";
     preview.src = objectURL;
     preview.style.width = "50%";
@@ -283,12 +312,9 @@ let refresh = () => {
     window.location.reload()
 }
 
-
-
+//Disparadores
 
 recordBtn.onclick = empezar;
 upload.onclick = createDataForApi;
 
-function newFunction() {
-    showAllMyGifos();
-}
+/*Creado por Federico Capucci - 2020 - Cba -  Argentina*/
