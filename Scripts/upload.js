@@ -55,7 +55,7 @@ async function PrenderyMostrarCamara() {
         /*Estrimea la camara*/
     screen.srcObject = stream;
     screen.play();
-    console.log("Fede: Camara Prendida")
+
     recordBtnImgHolder.classList.toggle('hide')
     recordBtn.innerHTML = "Capturar";
 
@@ -74,7 +74,7 @@ let grabar = () => {
         preview.src = "";
 
         screen.style.display = "block";
-        console.log("Fede: Grabando")
+
         recordBtnHolder.style.opacity = 0;
         recordBtnImgHolder.style.opacity = 0;
         recordBtnImg.src = "./assets/recording.svg";
@@ -93,7 +93,7 @@ let grabar = () => {
             width: 180,
             hidden: 120,
             onGifRecordingStarted: function() {
-                console.log('started')
+
             },
         });
         recorder.startRecording();
@@ -110,7 +110,7 @@ let grabar = () => {
 
         recorder.stopRecording(() => {
             recording = false;
-            console.log("Fede: Stopped")
+
             screen.style.display = "none";
 
         })
@@ -119,7 +119,7 @@ let grabar = () => {
         objectURL = URL.createObjectURL(blob);
         download.href = String(objectURL);
         download.download = "My Gifo.GIF"
-        console.log(download.href);
+
         preview.classList.toggle('hide')
         preview.src = objectURL;
     }
@@ -135,7 +135,7 @@ let TimerFn = () => {
                     seconds = '0' + seconds;
                 }
                 clock.innerHTML = `0:0${minutes}:${seconds}`;
-                console.log(timer)
+
                 seconds++;
             } else {
                 minutes++;
@@ -154,7 +154,7 @@ const createDataForApi = async() => {
     preview.src = "./assets/uploading.png"
     preview.style.filter = "none";
     clock.innerHTML = "";
-    console.log("Espera...");
+
     let form = new FormData();
     form.append('file', recorder.getBlob(), 'prueba.gif');
     const urlUpload = 'http://upload.giphy.com/v1/gifs'
@@ -168,7 +168,7 @@ const createDataForApi = async() => {
     numOfMyGifos++;
     localStorage.setItem("numOfMyGifos", numOfMyGifos);
     localStorage.setItem("Gif#" + numOfMyGifos, ApiUploadJson.data.id);
-    console.log("subido exitosamente");
+
     mygifosbanner.innerHTML = "Guifo subido con exito";
     preview.src = objectURL;
     preview.style.width = "50%";
@@ -185,7 +185,7 @@ const createDataForApi = async() => {
 
 
     savedgif = "https://media1.giphy.com/media/" + ApiUploadJson.data.id + "/giphy.gif";
-    console.log("https://media1.giphy.com/media/" + ApiUploadJson.data.id + "/giphy.gif");
+
     recorder.destroy();
     recorder = null;
     screen.classList.toggle('hide');
@@ -222,7 +222,7 @@ let showAllMyGifos = () => {
             if (value.length == 18) gifosArray.push(mygifo); /* Todas los ids son de 18 letras, una buena forma de filtrar localstorage */
 
         }
-        console.log(gifosArray)
+
 
         gifosArray.sort(compare);
 
@@ -236,16 +236,6 @@ let showAllMyGifos = () => {
             }
             return comparison;
         }
-
-        console.log(gifosArray)
-
-
-
-        // let p = document.createElement("p");
-
-        // p.innerHTML = "Total de Gifos: " + gifosArray.length;
-
-        // mgContainer.appendChild(p);
 
         for (each of gifosArray) {
             let newdiv = document.createElement('div');
