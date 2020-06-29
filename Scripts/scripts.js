@@ -43,7 +43,9 @@ let getRandom = async() => {
 
         const x = document.createElement('img')
         x.src = './assets/close.svg', x.alt = 'close btn';
-        x.onclick = (() => { x.classList.add('hide') });
+        x.onclick = (() => {
+            x.classList.add('hide')
+        });
         if (randomitemsjson.data.title == '' || randomitemsjson.data.title == ' ') {
             randomSpanArray[i].innerHTML = '#Funny GIF';
         } else {

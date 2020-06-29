@@ -11,26 +11,21 @@
 </head>
 
 <body onload="defaultheme(), getRandom(),getTrending(),showAllMyGifos()">
-
     <div class="heading">¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de visitas: 31.087.007
     </div>
-
     <div class="fullPageContainer hide" id="gifosContainer">
         <div class="logo">
             <a href="#"><img src="assets/arrow.svg" alt="arrow back" onclick="migifsection()"></a>
             <a href="#"><img src="#" alt="gifos logo" id="gifoslogo" onclick="migifsection()"></a>
         </div>
-
         <div class="gifosInstructions">
-
-
-
             <div class=searchtopgifos id="mygifosbanner">Crear Guifos</div>
             <video class="hide"></video>
             <img src="#" alt="preview" class="hide" id="preview">
             <div id=info>
                 <div> <img src="assets/window_img.png" alt="window" style="width: 40px;margin-top: 20px;margin-left: 20px;"> <b style="font-size: 18px; margin-left: 40px;line-height: 22px;"> Aquí podrás crear tus propios
-                        guifos </b> </div>
+                        guifos </b>
+                </div>
                 <div>
                     <pre class="testing">
 
@@ -49,7 +44,6 @@
                     </pre>
                 </div>
             </div>
-
             <div class="misGifosButtonHolder">
                 <div>
                     <div class="hide" id="timer"></div>
@@ -66,26 +60,17 @@
                         <span id="recordBtn" onclick="empezar()">Aceptar</span>
                     </button>
                     <a class="btn_global prop hide" id="upload">Subir Guifo</a>
-
-
                 </div>
             </div>
-
         </div>
-
         <div class="mygifosMainContainer">
             <P class="separator" id="miGifosBar">Mis Guifos:</P>
             <div class="mygifosContainer">
             </div>
-
         </div>
-
-
     </div>
-
     <div class="fullPageContainer" id="mainContainer">
         <div class="navcontainer">
-
             <div class="logo">
                 <a href="./index.html"><img src="./assets/gifOF_logo.png" alt="gifos logo" id="toplogo"></a>
             </div>
@@ -93,7 +78,6 @@
                 <button class="btn_global" id="crearGifos">
                     <span class="btn__text-container" onclick=migifsection()>Crear Guifos</span>
                 </button>
-
                 <div style="display: flex; flex-wrap: nowrap; justify-content: flex-start;">
                     <button class="btn_global">
                         <span class="btn__text-container" onclick="showThemes()">Elegir Tema</span>
@@ -106,14 +90,9 @@
                 <div class="themeContainer hide ">
                     <a href="#" onclick="changeThemeDay()"><span>S</span>ailor Day</a>
                     <a href="#" onclick="changeThemeNight()"><span>S</span>ailor Night</a>
-
-
                 </div>
-
             </div>
         </div>
-
-
         <div class="searchcontainer">
             <div class="searchtop">Buscar
             </div>
@@ -122,8 +101,6 @@
                 <button class="search-button" id="search-button" onclick="empezarBusqueda()" disabled> <img id="s-icon"
                         src="./assets/lupa_inactive.svg" alt="buscar"> Buscar</button>
             </div>
-
-
         </div>
         <div class="search-suggestions hide"></div>
         <div class="separators">
@@ -136,14 +113,11 @@
         </div>
         <div class="imgcontainer">
         </div>
-
     </div>
-
     <!-- script -->
     <script src="Scripts/scripts.js"></script>
     <script src="Scripts/upload.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/RecordRTC/5.6.1/RecordRTC.js"></script>
-
 </body>
 
 </html>

@@ -66,7 +66,8 @@ let grabar = () => {
 
     recording = !recording /*Si era False, lo pone en True, y viceversa*/
 
-    if (recording) { /*Si estoy grabando...*/
+    if (recording) {
+        /*Si estoy grabando...*/
         clock.classList.toggle('hide');
 
         clock.innerHTML = "Starting..."
@@ -100,7 +101,8 @@ let grabar = () => {
         recorder.startRecording();
         TimerFn();
 
-    } else { /*Si NO estoy grabando */
+    } else {
+        /*Si NO estoy grabando */
         recordBtnImgHolder.classList.add('hide');
         upload.classList.toggle('hide');
         recordBtnHolder.style.background = "#FFF4FD"
@@ -159,7 +161,11 @@ const createDataForApi = async() => {
     let form = new FormData();
     form.append('file', recorder.getBlob(), 'prueba.gif');
     const urlUpload = 'http://upload.giphy.com/v1/gifs'
-    const configUpload = { method: 'POST', mode: 'cors', body: form }
+    const configUpload = {
+        method: 'POST',
+        mode: 'cors',
+        body: form
+    }
     const ApiUpload = await fetch(`${urlUpload}?api_key=${apiKey}`, configUpload)
     upload.innerHTML = "Uploaded"
     if (ApiUpload.status != 200) {
@@ -218,7 +224,10 @@ let showAllMyGifos = () => {
 
             let value = localStorage.getItem(localStorage.key(i));
 
-            mygifo = { name: keys, id: value, }
+            mygifo = {
+                name: keys,
+                id: value,
+            }
 
             if (value.length == 18) gifosArray.push(mygifo); /* Todas los ids son de 18 letras, una buena forma de filtrar localstorage */
 
