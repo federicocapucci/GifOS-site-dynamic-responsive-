@@ -879,6 +879,22 @@ video {
     .bigsize {
         width: 350px;
     }
+    .testing {
+        font-size: 6px;
+    }
+    #MainHeading {
+        text-indent: 1px;
+        min-width: 480px;
+        font-size: 9px;
+    }
+    .gifosInstructions {
+        width: 90%;
+        min-width: 450px;
+    }
+    video {
+        width: 70%;
+        margin-top: 5px;
+    }
 }
 
 
