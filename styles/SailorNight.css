@@ -268,7 +268,7 @@ body {
     padding: 2px;
     color: #FFFFFF;
     letter-spacing: 0;
-    text-indent: 8vw;
+    text-indent: 1vw;
 }
 
 .searchtop {
@@ -366,6 +366,7 @@ body {
 .search-button {
     outline: none;
     margin-top: 8px;
+    margin-right: 5px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -373,8 +374,11 @@ body {
     justify-content: space-around;
     padding-right: 3px;
     width: 112px;
-    height: 36px;
+    height: 38px;
     font-size: 16px;
+    line-height: 35px;
+    border: 1px dotted transparent;
+    cursor: pointer;
     background: #D4D4D4;
     -webkit-box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
     box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
@@ -888,7 +892,7 @@ video {
     #MainHeading {
         text-indent: 1px;
         min-width: 480px;
-        font-size: 9px;
+        font-size: 11px;
     }
     .gifosInstructions {
         width: 90%;
