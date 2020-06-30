@@ -461,10 +461,10 @@ body {
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    -webkit-box-pack: space-evenly;
-    -ms-flex-pack: space-evenly;
-    justify-content: space-evenly;
-    margin: 10px 0 10px 0;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin: 10px -5px 10px -5px;
     padding: 0;
 }
 
@@ -490,7 +490,7 @@ body {
     background: #B4B4B4;
     -webkit-box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
     box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
-    margin: 0 8px 10px 8px;
+    margin: 0 4px 10px 4px;
 }
 
 .randomsize {
@@ -618,10 +618,10 @@ a:hover+a {
 
 .normalsize {
     position: relative;
-    margin: 0 5px 0 5px;
-    width: 330px;
+    margin: 0 4px 0 4px;
+    width: 320px;
     min-width: 240px;
-    height: 330px;
+    height: 320px;
     -webkit-box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #fff;
     box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #fff;
     /* background: linear-gradient(#EE3EFE, #2E32FB); */
@@ -633,15 +633,15 @@ a:hover+a {
 
 .bigsize {
     position: relative;
-    margin: 0 5px 0 5px;
-    width: 670px;
+    margin: 0 4px 0 4px;
+    width: 648px;
     min-width: 240px;
-    height: 330px;
+    height: 320px;
     -webkit-box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #fff;
     box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #fff;
     /* background: linear-gradient(#EE3EFE, #2E32FB); */
     overflow: hidden;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     -webkit-animation: changecolors 1s linear 2 alternate both;
     animation: changecolors 1s linear 2 alternate both;
 }
