@@ -225,9 +225,10 @@ body {
 }
 
 .fullPageContainer {
-    width: 80%;
+    width: 95%;
     min-width: 480px;
-    max-width: 1500px;
+    max-width: 1440px;
+    /**/
     height: auto;
     margin: auto;
 }
@@ -465,15 +466,17 @@ body {
     flex-wrap: wrap;
     -webkit-box-pack: space-evenly;
     -ms-flex-pack: space-evenly;
-    justify-content: space-evenly;
+    justify-content: center;
     margin: 10px 0 10px 0;
     padding: 0;
 }
 
 .randomSubContainer {
     position: relative;
-    width: 352px;
-    height: 352px;
+    width: 322px;
+    /**/
+    height: 322px;
+    /**/
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -490,14 +493,17 @@ body {
     background: #E6E6E6;
     -webkit-box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
     box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
-    margin: 0 10px 15px 10px;
+    margin: 0 8px 10px 8px;
+    /**/
 }
 
 .randomsize {
     position: relative;
-    width: 350px;
+    width: 320px;
+    /**/
     margin: auto;
-    height: 350px;
+    height: 320px;
+    /**/
     -webkit-box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #fff;
     box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #fff;
     -webkit-animation: changecolors 1s linear infinite alternate both;
@@ -595,7 +601,9 @@ a:hover+a {
 }
 
 .imgcontainer {
+    position: relative;
     width: 100%;
+    max-width: 1440px;
     height: auto;
     margin: auto;
     display: -webkit-box;
@@ -603,11 +611,9 @@ a:hover+a {
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    -webkit-box-pack: space-evenly;
-    -ms-flex-pack: space-evenly;
-    justify-content: space-evenly;
-    margin: 0;
+    justify-content: center;
     padding: 0;
+    margin: 0;
 }
 
 .imgcontainer a {
@@ -616,30 +622,30 @@ a:hover+a {
 
 .normalsize {
     position: relative;
-    width: 350px;
-    margin: auto;
+    margin: 0 5px 0 5px;
+    width: 330px;
     min-width: 240px;
-    height: 350px;
+    height: 330px;
     -webkit-box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #fff;
     box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #fff;
     /* background: linear-gradient(#F7C9F3, #4180F6); */
     overflow: hidden;
-    margin-bottom: 24px;
+    margin-bottom: 10px;
     -webkit-animation: changecolors 1s linear 2 alternate both;
     animation: changecolors 1s linear 2 alternate both;
 }
 
 .bigsize {
     position: relative;
-    width: 724px;
-    margin: auto;
+    margin: 0 5px 0 5px;
+    width: 670px;
     min-width: 240px;
-    height: 350px;
+    height: 330px;
     -webkit-box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #fff;
     box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #fff;
     /* background: linear-gradient(#F7C9F3, #4180F6); */
     overflow: hidden;
-    margin-bottom: 24px;
+    margin-bottom: 10px;
     -webkit-animation: changecolors 1s linear 2 alternate both;
     animation: changecolors 1s linear 2 alternate both;
 }
