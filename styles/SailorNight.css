@@ -323,7 +323,7 @@ body {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    width: auto;
+    width: 98%;
     height: auto;
     margin: auto;
     background-color: plum;
@@ -405,12 +405,12 @@ body {
 
 .separator {
     background: #FFFAFE;
-    width: 100%;
+    width: 98%;
     border: 1px solid #2E32FB;
     -webkit-box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #80687D;
     box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #80687D;
     height: 32px;
-    margin: 20px 0 0 0;
+    margin: 20px auto 0 auto;
     font-size: 14px;
     color: #110038;
     line-height: 30px;
@@ -464,7 +464,7 @@ body {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    margin: 10px -5px 10px -5px;
+    margin: 10px 0px 10px 0px;
     padding: 0;
 }
 
