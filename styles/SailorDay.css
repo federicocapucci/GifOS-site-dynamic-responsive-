@@ -623,7 +623,7 @@ a:hover+a {
 
 .normalsize {
     position: relative;
-    margin: 0 4px 0 4px;
+    margin: 0 6px 0 6px;
     width: 320px;
     min-width: 240px;
     height: 320px;
@@ -631,22 +631,22 @@ a:hover+a {
     box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #fff;
     /* background: linear-gradient(#F7C9F3, #4180F6); */
     overflow: hidden;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
     -webkit-animation: changecolors 1s linear 2 alternate both;
     animation: changecolors 1s linear 2 alternate both;
 }
 
 .bigsize {
     position: relative;
-    margin: 0 4px 0 4px;
-    width: 648px;
+    margin: 0 6px 0 6px;
+    width: 652px;
     min-width: 240px;
     height: 320px;
     -webkit-box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #fff;
     box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #fff;
     /* background: linear-gradient(#F7C9F3, #4180F6); */
     overflow: hidden;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
     -webkit-animation: changecolors 1s linear 2 alternate both;
     animation: changecolors 1s linear 2 alternate both;
 }
