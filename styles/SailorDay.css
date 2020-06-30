@@ -392,7 +392,8 @@ body {
 }
 
 .search-button:hover {
-    border: 1px dotted black;
+    outline: 1px dotted black;
+    outline-offset: -4px;
     background: #E6BBE2;
 }
 
