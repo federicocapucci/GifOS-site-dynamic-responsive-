@@ -408,7 +408,7 @@ body {
 }
 
 .search-button:disabled:hover {
-    border: 1px dotted transparent;
+    outline: 1px dotted transparent;
 }
 
 .separator {

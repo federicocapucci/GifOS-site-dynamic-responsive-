@@ -410,6 +410,10 @@ body {
     cursor: default;
 }
 
+.search-button:disabled:hover {
+    outline: 1px dotted transparent;
+}
+
 .separator {
     background: #FFFAFE;
     width: 98%;
