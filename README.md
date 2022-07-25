@@ -5,4 +5,4 @@ El proyecto se caracteriza por ser una pagina de busqueda de GIFs (imagenes con 
 
 La totalidad de la pagina fue construida sin Frameworks, y, como se menciono anteriormente, como un trabajo practico.
 
-https://federicocapucci.github.io/GifOS/
+https://federicocapucci.github.io/GifOS-site-dynamic-responsive-/
